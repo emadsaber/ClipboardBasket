@@ -1,0 +1,9 @@
+D:\Repos\ClipboardBasket\ClipboardBasket\bin\Debug\ClipboardBasket.exe.config
+D:\Repos\ClipboardBasket\ClipboardBasket\bin\Debug\ClipboardBasket.exe
+D:\Repos\ClipboardBasket\ClipboardBasket\bin\Debug\ClipboardBasket.pdb
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.csprojResolveAssemblyReference.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.Form1.resources
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.Properties.Resources.resources
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.csproj.GenerateResource.Cache
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.exe
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.pdb
