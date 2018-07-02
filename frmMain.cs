@@ -1,4 +1,7 @@
 ﻿using ClipboardCatcher;
+using ClipboardDB;
+using ClipboardDB.Models;
+using ClipboardDB.Models.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +35,8 @@ namespace ClipboardBasket
         private void Form1_TextCopied(object sender, string e)
         {
             lstHistory.Items.Add(e);
+
+            ClipBoardDBUnity.ClipBoardItems.Add(new ClipboardItem() { Id = new Guid(), TimeStamp = DateTime.Now, Type = ItemType.Text });
         }
     }
 }

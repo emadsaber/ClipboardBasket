@@ -83,6 +83,10 @@
       <Project>{5F620349-6649-4D9C-AD96-838B22230A67}</Project>
       <Name>ClipboardCatcher</Name>
     </ProjectReference>
+    <ProjectReference Include="ClipboardDB\ClipboardDB.csproj">
+      <Project>{AB4E7D0A-7AF8-4F79-9BF3-30FA0EDA327A}</Project>
+      <Name>ClipboardDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
