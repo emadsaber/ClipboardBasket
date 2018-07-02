@@ -7,3 +7,14 @@ D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.Properties.Re
 D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.csproj.GenerateResource.Cache
 D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.exe
 D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.pdb
+D:\Repos\ClipboardBasket\bin\Debug\ClipboardBasket.exe.config
+D:\Repos\ClipboardBasket\bin\Debug\ClipboardBasket.exe
+D:\Repos\ClipboardBasket\bin\Debug\ClipboardBasket.pdb
+D:\Repos\ClipboardBasket\bin\Debug\ClipboardCatcher.dll
+D:\Repos\ClipboardBasket\bin\Debug\ClipboardCatcher.pdb
+D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.csprojResolveAssemblyReference.cache
+D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.Properties.Resources.resources
+D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.csproj.GenerateResource.Cache
+D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.exe
+D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.pdb
+D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.frmMain.resources
