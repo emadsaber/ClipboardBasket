@@ -3,3 +3,4 @@ D:\Repos\ClipboardBasket\ClipboardDB\bin\Debug\ClipboardDB.pdb
 D:\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojResolveAssemblyReference.cache
 D:\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.dll
 D:\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.pdb
+D:\Repos\ClipboardBasket\ClipboardDB\bin\Debug\Polenter.SharpSerializer.PCL.dll

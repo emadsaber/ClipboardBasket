@@ -43,6 +43,7 @@
             this.lstHistory.Name = "lstHistory";
             this.lstHistory.Size = new System.Drawing.Size(218, 277);
             this.lstHistory.TabIndex = 2;
+            this.lstHistory.SelectedIndexChanged += new System.EventHandler(this.lstHistory_SelectedIndexChanged);
             // 
             // rtbView
             // 
