@@ -14,5 +14,6 @@ namespace ClipboardDB.Conracts.Bases
         bool Update(T entity);
         T Get(Guid id);
         IList<T> GetAll();
+        T GetLast();
     }
 }

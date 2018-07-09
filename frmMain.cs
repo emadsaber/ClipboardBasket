@@ -44,7 +44,7 @@ namespace ClipboardBasket
                 TextValue = "Image",
                 ImageValue = GetImageBytes(e)
             });
-
+            ShowStatus("New Item detected!");
             RefreshItems();
         }
         private void Form1_TextCopied(object sender, string e)
@@ -57,7 +57,7 @@ namespace ClipboardBasket
                 TextValue = e,
                 ImageValue = null
             });
-
+            ShowStatus("New Item detected!");
             RefreshItems();
         }
         private void lstHistory_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,8 +81,55 @@ namespace ClipboardBasket
             {
                 rtbView.Visible = false;
                 picView.Visible = true;
-                picView.BackgroundImageLayout = ImageLayout.Stretch;
+                picView.BackgroundImageLayout = ImageLayout.Center;
                 picView.BackgroundImage = GetImage(selectedCBItem.ImageValue);
+            }
+        }
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (lstHistory.SelectedIndex == -1) return;
+            if (lstHistory.SelectedValue == null) return;
+
+            var value = Guid.Parse(lstHistory.SelectedValue.ToString());
+            if (value == null) return;
+
+            var selectedCBItem = ClipBoardDBUnity.ClipBoardItems.Get(value);
+            if (selectedCBItem == null) return;
+
+            if (selectedCBItem.Type == ItemType.Text)
+            {
+                Clipboard.SetText(selectedCBItem.TextValue, TextDataFormat.UnicodeText);
+            }
+            else if (selectedCBItem.Type == ItemType.Bitmap)
+            {
+                Clipboard.SetImage(GetImage(selectedCBItem.ImageValue));
+            }
+            if (ClipBoardDBUnity.ClipBoardItems.Delete(value))
+            {
+                if (ClipBoardDBUnity.ClipBoardItems.Delete(ClipBoardDBUnity.ClipBoardItems.GetLast()))
+                {
+                    ShowStatus("Copied Successfully");
+                }
+            }
+            else
+            {
+                ShowStatus("Failed to copy item");
+            }
+
+            RefreshItems();
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lstHistory.SelectedIndex == -1) return;
+            if (lstHistory.SelectedValue == null) return;
+
+            var value = Guid.Parse(lstHistory.SelectedValue.ToString());
+            if (value == null) return;
+
+            if (ClipBoardDBUnity.ClipBoardItems.Delete(value))
+            {
+                ShowStatus("Deleted Successfully");
+                RefreshItems();
             }
         }
         #endregion
@@ -90,13 +137,11 @@ namespace ClipboardBasket
         #region helpers
         private void RefreshItems()
         {
-            var allItems = ClipBoardDBUnity.ClipBoardItems.GetAll();
+            var allItems = ClipBoardDBUnity.ClipBoardItems.GetAll().Reverse().ToList();
             lstHistory.ValueMember = "Id";
             lstHistory.DisplayMember = "TextValue";
             lstHistory.DataSource = allItems;
         }
-        #endregion
-
         private Image GetImage(byte[] bytes)
         {
             var fs = new MemoryStream(bytes);
@@ -107,5 +152,11 @@ namespace ClipboardBasket
             ImageConverter conv = new ImageConverter();
             return (byte[])conv.ConvertTo(image, typeof(byte[]));
         }
+        private void ShowStatus(string status)
+        {
+            lblStatus.Text = status;
+        }
+
+        #endregion
     }
 }

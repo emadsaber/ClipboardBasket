@@ -1,122 +1,14 @@
 ﻿<Collection name="Root" type="System.Collections.Generic.List`1[[ClipboardDB.Models.ClipboardItem, ClipboardDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <Properties>
-    <Simple name="Capacity" value="16" />
+    <Simple name="Capacity" value="8" />
   </Properties>
   <Items>
     <Complex>
       <Properties>
-        <Simple name="Id" value="bc874882-503b-4f3e-9b36-805a795e75ef" />
-        <Simple name="TimeStamp" value="07/09/2018 21:31:33" />
+        <Simple name="Id" value="7b9fa7e6-1f4d-4fb0-83b8-51d4d1339a98" />
+        <Simple name="TimeStamp" value="07/09/2018 23:01:36" />
         <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="Hello" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="53161d70-e5f3-4540-9648-2571941b2db9" />
-        <Simple name="TimeStamp" value="07/09/2018 21:31:53" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="World" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="4076a01f-f3ff-450e-9c08-404a08223036" />
-        <Simple name="TimeStamp" value="07/09/2018 21:31:57" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="Hello&#xD;&#xA;World" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="c3ced9fd-a9fc-4b1c-86a1-2191c85d5999" />
-        <Simple name="TimeStamp" value="07/09/2018 21:32:19" />
-        <Simple name="Type" value="Bitmap" />
-        <Simple name="TextValue" value="Image" />
-        <Simple name="ImageValue" value="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" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="52ee1ebb-5110-4286-89a7-49a147d7997d" />
-        <Simple name="TimeStamp" value="07/09/2018 21:32:22" />
-        <Simple name="Type" value="Bitmap" />
-        <Simple name="TextValue" value="Image" />
-        <Simple name="ImageValue" value="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" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="5e8504fd-a260-4e2c-8b7b-2518bd692adc" />
-        <Simple name="TimeStamp" value="07/09/2018 21:32:27" />
-        <Simple name="Type" value="Bitmap" />
-        <Simple name="TextValue" value="Image" />
-        <Simple name="ImageValue" value="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" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="444e6bb5-a443-4ea6-b6c0-01c799cbede7" />
-        <Simple name="TimeStamp" value="07/09/2018 22:11:43" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="ÃåáÇð ÈÇáÚÇáã" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="1ffee9e3-9020-47ad-9888-f520da36c854" />
-        <Simple name="TimeStamp" value="07/09/2018 22:12:42" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="????? ???????" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="b78c372e-4169-426c-b23a-310194d7cce5" />
-        <Simple name="TimeStamp" value="07/09/2018 22:13:10" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="????? ???????" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="c11c8d0c-d848-4fdf-85a3-ac86ddf3565d" />
-        <Simple name="TimeStamp" value="07/09/2018 22:13:37" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="????? ???????" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="5875cc57-2c53-4af1-b964-3a9c4856cc4d" />
-        <Simple name="TimeStamp" value="07/09/2018 22:19:29" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="????? ???????" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="ae914647-1711-40b2-a575-d0061d0ed910" />
-        <Simple name="TimeStamp" value="07/09/2018 22:20:10" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="????? ???????" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="b06dc0e8-3b5b-4499-84b2-5f554812d586" />
-        <Simple name="TimeStamp" value="07/09/2018 22:22:17" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="أهلاً بالعالم" />
+        <Simple name="TextValue" value="aaaaaaaaaaaaaaaa" />
         <Null name="ImageValue" />
       </Properties>
     </Complex>

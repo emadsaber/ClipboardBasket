@@ -48,7 +48,10 @@ namespace ClipboardDB.Repositories
         {
             return _ctx.ClipBoardItems.ToList();
         }
-
+        public ClipboardItem GetLast()
+        {
+            return _ctx.ClipBoardItems.Last();
+        }
         public bool Update(ClipboardItem entity)
         {
             var index = _ctx.ClipBoardItems.FindIndex(x => x.Id == entity.Id);
