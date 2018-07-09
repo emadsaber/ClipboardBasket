@@ -21,6 +21,3 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
-*.pdb
-*.dll
-bin/Debug/ClipboardBasket.pdb

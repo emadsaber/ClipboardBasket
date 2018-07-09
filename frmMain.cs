@@ -65,7 +65,7 @@ namespace ClipboardBasket
             if (lstHistory.SelectedIndex < 0) return;
             if (lstHistory.SelectedValue == null) return;
 
-            var value = Guid.Parse(lstHistory.SelectedValue.ToString());
+            var value = Guid.Parse(lstHistory.SelectedValue.ToString()); 
             if (value == null) return;
 
             var selectedCBItem = ClipBoardDBUnity.ClipBoardItems.Get(value);

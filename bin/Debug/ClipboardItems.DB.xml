@@ -1,6 +1,6 @@
 ﻿<Collection name="Root" type="System.Collections.Generic.List`1[[ClipboardDB.Models.ClipboardItem, ClipboardDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <Properties>
-    <Simple name="Capacity" value="8" />
+    <Simple name="Capacity" value="16" />
   </Properties>
   <Items>
     <Complex>
@@ -55,6 +55,69 @@
         <Simple name="Type" value="Bitmap" />
         <Simple name="TextValue" value="Image" />
         <Simple name="ImageValue" value="iVBORw0KGgoAAAANSUhEUgAAAG0AAABVCAYAAABD0WqWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYLSURBVHhe7Z3Llds6DIbdz926I3dxe9AilWTlZmaZVRbpQQFAQgQgkFbskSXM4D+HyYhPAB9J25R8fJlT4ZTQAiqhBVRCC6iEFlAJLaASWkAltIBKaAF1udc/UnGkoN1vl/ly4XSdpw/KnW9LXkm3pdG67HK5QS7rY56usv5++piuxo6SrsWJL6Bf8/8/fs7/QarQSnAvbnQRjABxv0EwJBiUqbPofdCaerZ8Ff2q0D6m+dp11IF2nQCH1DpQ/szn1UsVYMxWxmCx3XWaoD/Ih3Gmuvq3g+/Yomwuk6mswlJ/Evaq1dmx8zhVaGunpNCpZrQK/KJ1oIp6K83Wx+vSb4GNZWVcDGAB6Vu3lmdL65+kJmkZZ9llqEy+NPh2DmVAc6IhRmWbtBmaMFw5xbLOsTrQXMMFNGrQAvQ6NMiFFct96P5sfWHzwM7jxNuj+zrF8px6EZq7xRbtBY0A0Ji23POv2jywc6jRahqVbRJDq4ZueiNCg9qgdAIFkjO8Cev7hm6CRpOs5+jIFuhvgraqoamvJnDfzuO0QEMVAxt9Xk29fJQtw2QCpmaWaGtnXJ3RW6BRHWjzr9B82CP/QB073y/xlr/mfA+5290A8kn1jaCVFbVenQntlOKTHv/NTEJLvUEJLaASWkAltIBKaAGV0AIqoQVUQguohBZQCS2gElpAJbSASmgBldACKqEFVEILqIQWUAktoBJaQCW0gKrQxg+3yK9AneXBzekKxoP1mK5TzRzofmv1z+LDs9oErajziPcRAhsuAO2Zh0YRdkI7QB+wssDcp/T1oNXHpv1nBDvQzGPTewaEYNUtTiYeUm6BmDxbXGjgKri2tFPbrSlbtXUfNd9XYAYKoUHQeWQCYZ5pd6HZFYrXtp0j+3x8TVsd37TSarBtlx40hN0bG17OVR94rfw7FpoMvgfIyXODvwHai+pCA9vABJVsLD1o1B/Wt31W8LbPvf17JDAB9SQ0nGXPfItkp5WmVkENuO1y+JoG+WBG6xuvof7BjFbyodGSlxBRve1xe7A/Sy60Comh4ZaHAKxpD9+IGNg4EYb16/bof09gH9WXsRL8NuvlFldgtbKSFkfsqnnD97d6K41BYcI3E/L1CGFxGSf2wZYpSBXiUm5XHvs/JPu5AjNSr6lM6reutPp/6gnxN1LfCQyV0AIqoQVUQguohBZQCS2gKjR7IqJ1xvtp31mboBV5JyLH6OGpxhdXQgsoDa2eo/kfGDvQzDHWnsGk4yuw2CY2FY+xblBHHjuxOfJIC8+hsI695jYrH2pczjJRwERUPXtkqwjEee+n9VYanT2Ks0GCWOuNoKkyEF4rH84LTQbfA+TkucHf/37aCFovsF1o9W8wXaW9fXhFYB7qSWg4Aw+4n/ap0OCf1cn9yeVDo+1AQkT1tsftwf4sIRz1HEfVI2i8ehA6mL34h2VDHyge7z8Y7ink/TReKTAcJbZ1BA3MXOrbe222v9XKYx+HZN8nMDH1WGXinmal1f9THR11z2ykhBZQCS2gElpAJbSASmgBdX5o9BnJftD/3goGzR4CYDoOqP2Rh3cp6EqzZ6XH6DBoy8lMPV+TiQ3Cxw1ukzyuEgHjI56a2kmPCexqxWz/zbL1alpDKwHs/+6afGRC5pMGvvf94zF9aL3x6MO6Ouozpy0b4llXGmaI80Z0QnRMBphr6owGEO3U9SNo0CdbREHTZYuxqh3L9A2iYFBeaY9B6AZ1ZUvPdzuOrjuCpjQaT5bR34/juRlaI95EgTIFra5xeGV4p8yMrduxTHtQs6X5ooJKE6PNYD1JOr7T2LINplZ3CK07Hha1lSX72BrP5TUNCz3DUPGhtTyS6bPru7XFSAZcazweXVO/2o9/g7Z04qsHrRhjjeNraTjf3mEDtbGlXb1Wfdh2LNMeNIRm7CyQxHhd37Gvju+gLrTReFXub7mZdvq6+QUTqdTQs00P0oWGUtuAGBBEgaxl5U0C9zmARpet3e0u65YgcllJpWwIDXOFf9oWXSb7JJFtokwAlnZy4jiNxiPVuK3iuiWev3//mTPFSgktYEpo4dKf+S+3+9l931e0wgAAAABJRU5ErkJggg==" />
+      </Properties>
+    </Complex>
+    <Complex>
+      <Properties>
+        <Simple name="Id" value="444e6bb5-a443-4ea6-b6c0-01c799cbede7" />
+        <Simple name="TimeStamp" value="07/09/2018 22:11:43" />
+        <Simple name="Type" value="Text" />
+        <Simple name="TextValue" value="ÃåáÇð ÈÇáÚÇáã" />
+        <Null name="ImageValue" />
+      </Properties>
+    </Complex>
+    <Complex>
+      <Properties>
+        <Simple name="Id" value="1ffee9e3-9020-47ad-9888-f520da36c854" />
+        <Simple name="TimeStamp" value="07/09/2018 22:12:42" />
+        <Simple name="Type" value="Text" />
+        <Simple name="TextValue" value="????? ???????" />
+        <Null name="ImageValue" />
+      </Properties>
+    </Complex>
+    <Complex>
+      <Properties>
+        <Simple name="Id" value="b78c372e-4169-426c-b23a-310194d7cce5" />
+        <Simple name="TimeStamp" value="07/09/2018 22:13:10" />
+        <Simple name="Type" value="Text" />
+        <Simple name="TextValue" value="????? ???????" />
+        <Null name="ImageValue" />
+      </Properties>
+    </Complex>
+    <Complex>
+      <Properties>
+        <Simple name="Id" value="c11c8d0c-d848-4fdf-85a3-ac86ddf3565d" />
+        <Simple name="TimeStamp" value="07/09/2018 22:13:37" />
+        <Simple name="Type" value="Text" />
+        <Simple name="TextValue" value="????? ???????" />
+        <Null name="ImageValue" />
+      </Properties>
+    </Complex>
+    <Complex>
+      <Properties>
+        <Simple name="Id" value="5875cc57-2c53-4af1-b964-3a9c4856cc4d" />
+        <Simple name="TimeStamp" value="07/09/2018 22:19:29" />
+        <Simple name="Type" value="Text" />
+        <Simple name="TextValue" value="????? ???????" />
+        <Null name="ImageValue" />
+      </Properties>
+    </Complex>
+    <Complex>
+      <Properties>
+        <Simple name="Id" value="ae914647-1711-40b2-a575-d0061d0ed910" />
+        <Simple name="TimeStamp" value="07/09/2018 22:20:10" />
+        <Simple name="Type" value="Text" />
+        <Simple name="TextValue" value="????? ???????" />
+        <Null name="ImageValue" />
+      </Properties>
+    </Complex>
+    <Complex>
+      <Properties>
+        <Simple name="Id" value="b06dc0e8-3b5b-4499-84b2-5f554812d586" />
+        <Simple name="TimeStamp" value="07/09/2018 22:22:17" />
+        <Simple name="Type" value="Text" />
+        <Simple name="TextValue" value="أهلاً بالعالم" />
+        <Null name="ImageValue" />
       </Properties>
     </Complex>
   </Items>
