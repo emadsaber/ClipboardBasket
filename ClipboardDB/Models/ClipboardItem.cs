@@ -13,7 +13,7 @@ namespace ClipboardDB.Models
         public Guid Id { get; set; }
         public DateTime TimeStamp { get; set; }
         public ItemType Type { get; set; }
-        public string TextValue { get; set; } //TODO : Handle Image Type
-        public Bitmap ImageValue { get; set; }
+        public string TextValue { get; set; } 
+        public byte[] ImageValue { get; set; }
     }
 }

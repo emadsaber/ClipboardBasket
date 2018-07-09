@@ -8,8 +8,6 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-bin/**
-obj/**
 
 # Windows Installer files
 *.cab
@@ -24,3 +22,5 @@ obj/**
 # Operating System Files
 # =========================
 *.pdb
+*.dll
+bin/Debug/ClipboardBasket.pdb
