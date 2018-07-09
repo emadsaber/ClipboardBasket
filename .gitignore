@@ -8,6 +8,8 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+bin/**
+obj/**
 
 # Windows Installer files
 *.cab
@@ -21,3 +23,4 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+*.pdb

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace ClipboardBasket
                 TimeStamp = DateTime.Now,
                 Type = ItemType.Bitmap,
                 TextValue = "Image",
-                ImageValue = e
+                ImageValue = GetImageBytes(e)
             });
 
             RefreshItems();
@@ -81,7 +82,7 @@ namespace ClipboardBasket
                 rtbView.Visible = false;
                 picView.Visible = true;
                 picView.BackgroundImageLayout = ImageLayout.Stretch;
-                picView.BackgroundImage = selectedCBItem.ImageValue;
+                picView.BackgroundImage = GetImage(selectedCBItem.ImageValue);
             }
         }
         #endregion
@@ -90,12 +91,21 @@ namespace ClipboardBasket
         private void RefreshItems()
         {
             var allItems = ClipBoardDBUnity.ClipBoardItems.GetAll();
-            lstHistory.DataSource = allItems;
             lstHistory.ValueMember = "Id";
             lstHistory.DisplayMember = "TextValue";
+            lstHistory.DataSource = allItems;
         }
         #endregion
 
-
+        private Image GetImage(byte[] bytes)
+        {
+            var fs = new MemoryStream(bytes);
+            return Bitmap.FromStream(fs);
+        }
+        private byte[] GetImageBytes(Bitmap image)
+        {
+            ImageConverter conv = new ImageConverter();
+            return (byte[])conv.ConvertTo(image, typeof(byte[]));
+        }
     }
 }
