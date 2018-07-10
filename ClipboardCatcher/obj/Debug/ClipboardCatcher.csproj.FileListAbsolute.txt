@@ -1,0 +1,7 @@
+D:\Repos\ClipboardCatcher\obj\Debug\ClipboardCatcher.csprojResolveAssemblyReference.cache
+D:\Repos\ClipboardCatcher\obj\Debug\ClipboardCatcher.CatcherForm.resources
+D:\Repos\ClipboardCatcher\obj\Debug\ClipboardCatcher.csproj.GenerateResource.Cache
+D:\Repos\ClipboardCatcher\bin\Debug\ClipboardCatcher.dll
+D:\Repos\ClipboardCatcher\bin\Debug\ClipboardCatcher.pdb
+D:\Repos\ClipboardCatcher\obj\Debug\ClipboardCatcher.dll
+D:\Repos\ClipboardCatcher\obj\Debug\ClipboardCatcher.pdb
