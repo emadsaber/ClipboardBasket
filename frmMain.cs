@@ -90,6 +90,70 @@ namespace ClipboardBasket
             if (lstHistory.SelectedIndex == -1) return;
             if (lstHistory.SelectedValue == null) return;
 
+            CopySelected();
+        }
+        private void lstHistory_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lstHistory.SelectedIndex == -1) return;
+            if (lstHistory.SelectedValue == null) return;
+
+            CopySelected();
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lstHistory.SelectedIndex == -1) return;
+            if (lstHistory.SelectedValue == null) return;
+
+            var value = Guid.Parse(lstHistory.SelectedValue.ToString());
+            if (value == null) return;
+
+            if (ClipBoardDBUnity.ClipBoardItems.Delete(value))
+            {
+                ShowStatus("Deleted Successfully");
+                RefreshItems();
+            }
+        }
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            var dlgResult = MessageBox.Show("Are you sure you want to delete all items. They can not be restored again?", "Confirm Clear History!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (dlgResult == DialogResult.No) return;
+
+            if (ClipBoardDBUnity.ClipBoardItems.DeleteAll())
+            {
+                ShowStatus("All history deleted");
+            }
+            else
+            {
+                ShowStatus("Failed to delete all history");
+            }
+            RefreshItems();
+        }
+        #endregion
+
+        #region helpers
+        private void RefreshItems()
+        {
+            var allItems = ClipBoardDBUnity.ClipBoardItems.GetAll().Reverse().ToList();
+            lstHistory.ValueMember = "Id";
+            lstHistory.DisplayMember = "TextValue";
+            lstHistory.DataSource = allItems;
+        }
+        private Image GetImage(byte[] bytes)
+        {
+            var fs = new MemoryStream(bytes);
+            return Bitmap.FromStream(fs);
+        }
+        private byte[] GetImageBytes(Bitmap image)
+        {
+            ImageConverter conv = new ImageConverter();
+            return (byte[])conv.ConvertTo(image, typeof(byte[]));
+        }
+        private void ShowStatus(string status)
+        {
+            lblStatus.Text = status;
+        }
+        private void CopySelected()
+        {
             var value = Guid.Parse(lstHistory.SelectedValue.ToString());
             if (value == null) return;
 
@@ -118,45 +182,8 @@ namespace ClipboardBasket
 
             RefreshItems();
         }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (lstHistory.SelectedIndex == -1) return;
-            if (lstHistory.SelectedValue == null) return;
-
-            var value = Guid.Parse(lstHistory.SelectedValue.ToString());
-            if (value == null) return;
-
-            if (ClipBoardDBUnity.ClipBoardItems.Delete(value))
-            {
-                ShowStatus("Deleted Successfully");
-                RefreshItems();
-            }
-        }
-        #endregion
-
-        #region helpers
-        private void RefreshItems()
-        {
-            var allItems = ClipBoardDBUnity.ClipBoardItems.GetAll().Reverse().ToList();
-            lstHistory.ValueMember = "Id";
-            lstHistory.DisplayMember = "TextValue";
-            lstHistory.DataSource = allItems;
-        }
-        private Image GetImage(byte[] bytes)
-        {
-            var fs = new MemoryStream(bytes);
-            return Bitmap.FromStream(fs);
-        }
-        private byte[] GetImageBytes(Bitmap image)
-        {
-            ImageConverter conv = new ImageConverter();
-            return (byte[])conv.ConvertTo(image, typeof(byte[]));
-        }
-        private void ShowStatus(string status)
-        {
-            lblStatus.Text = status;
-        }
 
         #endregion
+        
     }
 }

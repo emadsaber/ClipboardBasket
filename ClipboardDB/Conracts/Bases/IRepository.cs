@@ -10,6 +10,7 @@ namespace ClipboardDB.Conracts.Bases
     {
         bool Add(T entity);
         bool Delete(Guid id);
+        bool DeleteAll();
         bool Delete(T entity);
         bool Update(T entity);
         T Get(Guid id);

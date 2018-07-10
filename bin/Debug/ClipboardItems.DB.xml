@@ -1,16 +1,6 @@
 ﻿<Collection name="Root" type="System.Collections.Generic.List`1[[ClipboardDB.Models.ClipboardItem, ClipboardDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <Properties>
-    <Simple name="Capacity" value="8" />
+    <Simple name="Capacity" value="0" />
   </Properties>
-  <Items>
-    <Complex>
-      <Properties>
-        <Simple name="Id" value="7b9fa7e6-1f4d-4fb0-83b8-51d4d1339a98" />
-        <Simple name="TimeStamp" value="07/09/2018 23:01:36" />
-        <Simple name="Type" value="Text" />
-        <Simple name="TextValue" value="aaaaaaaaaaaaaaaa" />
-        <Null name="ImageValue" />
-      </Properties>
-    </Complex>
-  </Items>
+  <Items />
 </Collection>

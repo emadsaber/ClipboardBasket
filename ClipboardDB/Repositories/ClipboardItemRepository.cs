@@ -33,7 +33,11 @@ namespace ClipboardDB.Repositories
             _ctx.ClipBoardItems.Remove(entity);
             return _ctx.SaveChanges();
         }
-
+        public bool DeleteAll()
+        {
+            _ctx.ClipBoardItems = new List<ClipboardItem>();
+            return _ctx.SaveChanges();
+        }
         public void Dispose()
         {
             this.Dispose();
