@@ -34,6 +34,7 @@
       <HintPath>..\packages\SharpSerializer.PCL.2.18.7\lib\portable-net45+sl50+win+wpa81+wp80\Polenter.SharpSerializer.PCL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,7 @@
     <Compile Include="ClipBoardDBUnity.cs" />
     <Compile Include="Conracts\Bases\IRepository.cs" />
     <Compile Include="Conracts\IClipboardItemRepository.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Context\Bases\BaseContext.cs" />
     <Compile Include="Context\SerializationContext.cs" />
     <Compile Include="Models\Common\ItemType.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="Repositories\ClipboardItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

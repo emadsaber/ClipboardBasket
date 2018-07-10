@@ -2,6 +2,7 @@
 using Polenter.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,16 +19,22 @@ namespace ClipboardDB.Context
         public SerializationContext()
         {
             this.ClipBoardItems = new List<ClipboardItem>();
-
-            this._serializer = new SharpSerializer();
+            var isEncryptionEnabled = true;
+            var encryptionConfig = ConfigurationManager.AppSettings[Constants.DB.DB_Encryption_Enabled];
+            if(encryptionConfig != null)
+            {
+                bool.TryParse(encryptionConfig, out isEncryptionEnabled);
+            }
+            this._serializer = new SharpSerializer(isEncryptionEnabled);
 
             GetAllItems();
         }
 
         private void GetAllItems()
         {
+            
             //Load Clipboard Items
-            using (var fs = new FileStream(FilePath(typeof(ClipboardItem).Name), FileMode.OpenOrCreate))
+            using (var fs = new FileStream(GetFilePath(), FileMode.OpenOrCreate))
             {
                 if (fs.Length > 0)
                 {
@@ -35,6 +42,14 @@ namespace ClipboardDB.Context
                 }
             }
         }
+
+        private string GetFilePath()
+        {
+            var value = ConfigurationManager.AppSettings[Constants.DB.DB_File_Path];
+            if(value == null) { return "LocalDB.Default.xml"; }
+            return value;
+        }
+
         public string FilePath(string name) { return $"{name}s.DB.xml"; }
 
         public void Dispose()

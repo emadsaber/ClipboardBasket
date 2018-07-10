@@ -21,3 +21,4 @@ D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.frmMain.resources
 D:\Repos\ClipboardBasket\bin\Debug\ClipboardDB.dll
 D:\Repos\ClipboardBasket\bin\Debug\ClipboardDB.pdb
 D:\Repos\ClipboardBasket\bin\Debug\Polenter.SharpSerializer.PCL.dll
+D:\Repos\ClipboardBasket\bin\Debug\ClipboardDB.dll.config

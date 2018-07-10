@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardBasket", "ClipboardBasket.csproj", "{86976D4F-7D86-4DE5-A277-C6A16369985E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardCatcher", "..\ClipboardCatcher\ClipboardCatcher.csproj", "{5F620349-6649-4D9C-AD96-838B22230A67}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardDB", "ClipboardDB\ClipboardDB.csproj", "{AB4E7D0A-7AF8-4F79-9BF3-30FA0EDA327A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardCatcher", "ClipboardCatcher\ClipboardCatcher.csproj", "{5F620349-6649-4D9C-AD96-838B22230A67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{86976D4F-7D86-4DE5-A277-C6A16369985E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86976D4F-7D86-4DE5-A277-C6A16369985E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86976D4F-7D86-4DE5-A277-C6A16369985E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F620349-6649-4D9C-AD96-838B22230A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F620349-6649-4D9C-AD96-838B22230A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F620349-6649-4D9C-AD96-838B22230A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F620349-6649-4D9C-AD96-838B22230A67}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB4E7D0A-7AF8-4F79-9BF3-30FA0EDA327A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB4E7D0A-7AF8-4F79-9BF3-30FA0EDA327A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB4E7D0A-7AF8-4F79-9BF3-30FA0EDA327A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB4E7D0A-7AF8-4F79-9BF3-30FA0EDA327A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F620349-6649-4D9C-AD96-838B22230A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F620349-6649-4D9C-AD96-838B22230A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F620349-6649-4D9C-AD96-838B22230A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F620349-6649-4D9C-AD96-838B22230A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

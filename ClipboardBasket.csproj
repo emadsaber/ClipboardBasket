@@ -79,8 +79,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClipboardCatcher\ClipboardCatcher.csproj">
-      <Project>{5F620349-6649-4D9C-AD96-838B22230A67}</Project>
+    <ProjectReference Include="ClipboardCatcher\ClipboardCatcher.csproj">
+      <Project>{5f620349-6649-4d9c-ad96-838b22230a67}</Project>
       <Name>ClipboardCatcher</Name>
     </ProjectReference>
     <ProjectReference Include="ClipboardDB\ClipboardDB.csproj">
