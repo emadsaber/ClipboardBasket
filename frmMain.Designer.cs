@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lstHistory = new System.Windows.Forms.ListBox();
             this.rtbView = new System.Windows.Forms.RichTextBox();
             this.picView = new System.Windows.Forms.PictureBox();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.rtbView);
             this.Controls.Add(this.lstHistory);
             this.Controls.Add(this.picView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clipboard Basket";
