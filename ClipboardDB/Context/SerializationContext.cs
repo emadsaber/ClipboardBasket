@@ -46,7 +46,13 @@ namespace ClipboardDB.Context
         private string GetFilePath()
         {
             var value = ConfigurationManager.AppSettings[Constants.DB.DB_File_Path];
-            if(value == null) { return "LocalDB.Default.xml"; }
+            value = value.Replace("%AppData%", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
+            if (value == null) { return "LocalDB.Default.xml"; }
+            if (!File.Exists(value))
+            {
+                var foldersOnly = value.Substring(0, value.LastIndexOf(@"\"));
+                Directory.CreateDirectory(foldersOnly);
+            }
             return value;
         }
 
@@ -59,7 +65,7 @@ namespace ClipboardDB.Context
 
         public override bool SaveChanges()
         {
-            using (var fs = new FileStream(FilePath(typeof(ClipboardItem).Name), FileMode.Create))
+            using (var fs = new FileStream(GetFilePath(), FileMode.Create))
             {
                 _serializer.Serialize(ClipBoardItems, fs);
             }
