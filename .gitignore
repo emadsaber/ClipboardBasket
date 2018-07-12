@@ -21,3 +21,6 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+/.vs/ClipboardBasket/v14
+/bin/Debug
+/ClipboardDB/obj/Debug
