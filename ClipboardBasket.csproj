@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\trash_big.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,6 +90,13 @@
       <Project>{AB4E7D0A-7AF8-4F79-9BF3-30FA0EDA327A}</Project>
       <Name>ClipboardDB</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\basket_very_big.ico" />
+    <Content Include="Images\basket_big.ico" />
+    <Content Include="Images\basket_small.ico" />
+    <Content Include="Images\trash_small.ico" />
+    <Content Include="Images\trash_big.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
