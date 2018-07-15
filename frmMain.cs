@@ -128,6 +128,22 @@ namespace ClipboardBasket
             }
             RefreshItems();
         }
+        private void tsViewBasket_Click(object sender, EventArgs e)
+        {
+            ViewBasket();
+        }
+        private void tsAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Made by Emad Saber: emadsaber89@gmail.com");
+        }
+        private void tsExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void notifier_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ViewBasket();
+        }
         #endregion
 
         #region helpers
@@ -182,8 +198,15 @@ namespace ClipboardBasket
 
             RefreshItems();
         }
+        private void ViewBasket()
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.Show();
+            this.BringToFront();
+        }
 
         #endregion
+
         
     }
 }

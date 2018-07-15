@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lstHistory = new System.Windows.Forms.ListBox();
             this.rtbView = new System.Windows.Forms.RichTextBox();
@@ -37,8 +38,16 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnDeleteAll = new System.Windows.Forms.Button();
+            this.notifier = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ctxMnu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsViewBasket = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.ctxMnu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstHistory
@@ -126,6 +135,56 @@
             this.btnDeleteAll.UseVisualStyleBackColor = true;
             this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
+            // notifier
+            // 
+            this.notifier.ContextMenuStrip = this.ctxMnu;
+            this.notifier.Icon = ((System.Drawing.Icon)(resources.GetObject("notifier.Icon")));
+            this.notifier.Text = "Clipboard Basket";
+            this.notifier.Visible = true;
+            this.notifier.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifier_MouseDoubleClick);
+            // 
+            // ctxMnu
+            // 
+            this.ctxMnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsViewBasket,
+            this.toolStripMenuItem1,
+            this.tsAbout,
+            this.exitToolStripMenuItem1,
+            this.tsExit});
+            this.ctxMnu.Name = "ctxMnu";
+            this.ctxMnu.Size = new System.Drawing.Size(146, 82);
+            // 
+            // tsViewBasket
+            // 
+            this.tsViewBasket.Name = "tsViewBasket";
+            this.tsViewBasket.Size = new System.Drawing.Size(145, 22);
+            this.tsViewBasket.Text = "View Basket...";
+            this.tsViewBasket.Click += new System.EventHandler(this.tsViewBasket_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 6);
+            // 
+            // tsAbout
+            // 
+            this.tsAbout.Name = "tsAbout";
+            this.tsAbout.Size = new System.Drawing.Size(145, 22);
+            this.tsAbout.Text = "About...";
+            this.tsAbout.Click += new System.EventHandler(this.tsAbout_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(142, 6);
+            // 
+            // tsExit
+            // 
+            this.tsExit.Name = "tsExit";
+            this.tsExit.Size = new System.Drawing.Size(145, 22);
+            this.tsExit.Text = "Exit";
+            this.tsExit.Click += new System.EventHandler(this.tsExit_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,12 +199,15 @@
             this.Controls.Add(this.picView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clipboard Basket";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picView)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.ctxMnu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,6 +222,13 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.Button btnDeleteAll;
+        private System.Windows.Forms.NotifyIcon notifier;
+        private System.Windows.Forms.ContextMenuStrip ctxMnu;
+        private System.Windows.Forms.ToolStripMenuItem tsViewBasket;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsAbout;
+        private System.Windows.Forms.ToolStripSeparator exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsExit;
     }
 }
 

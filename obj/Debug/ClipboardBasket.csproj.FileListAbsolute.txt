@@ -22,3 +22,17 @@ D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.Properties.Resources.resource
 D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.csproj.GenerateResource.Cache
 D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.exe
 D:\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.pdb
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\ClipboardBasket.exe.config
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.exe
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.pdb
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\ClipboardBasket.exe
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\ClipboardBasket.pdb
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\ClipboardCatcher.dll
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\ClipboardDB.dll
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\Polenter.SharpSerializer.PCL.dll
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\ClipboardCatcher.pdb
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\bin\Debug\ClipboardDB.pdb
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.csprojResolveAssemblyReference.cache
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.frmMain.resources
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.Properties.Resources.resources
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\obj\Debug\ClipboardBasket.csproj.GenerateResource.Cache
