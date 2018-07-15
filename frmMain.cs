@@ -144,6 +144,15 @@ namespace ClipboardBasket
         {
             ViewBasket();
         }
+        private void tsStatistics_Click(object sender, EventArgs e)
+        {
+            var stats = GetStatistics();
+            if (string.IsNullOrEmpty(stats))
+            {
+                MessageBox.Show("Failed to get statistics", "Statistics", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            MessageBox.Show(stats, "Statistics", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         #endregion
 
         #region helpers
@@ -167,6 +176,8 @@ namespace ClipboardBasket
         private void ShowStatus(string status)
         {
             lblStatus.Text = status;
+
+            notifier.ShowBalloonTip(3000, "Clipboard Basket", status, ToolTipIcon.Info);
         }
         private void CopySelected()
         {
@@ -204,9 +215,29 @@ namespace ClipboardBasket
             this.Show();
             this.BringToFront();
         }
+        private string GetStatistics()
+        {
+            try
+            {
+                var stats = new StringBuilder();
+                var allItems = ClipBoardDBUnity.ClipBoardItems.GetAll();
+                stats.AppendLine($"All Basket Items: {allItems.Count()}");
+                stats.AppendLine();
+                stats.AppendLine($"Texts In Basket: {allItems.Count(x => x.Type == ItemType.Text)}");
+                stats.AppendLine();
+                stats.AppendLine($"Images In Basket: {allItems.Count(x => x.Type == ItemType.Bitmap)}");
+                stats.AppendLine();
+
+                return stats.ToString();
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         #endregion
 
-        
+
     }
 }

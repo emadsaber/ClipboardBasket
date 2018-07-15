@@ -45,6 +45,8 @@
             this.tsAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsStatistics = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.ctxMnu.SuspendLayout();
@@ -148,42 +150,57 @@
             this.ctxMnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsViewBasket,
             this.toolStripMenuItem1,
+            this.tsStatistics,
+            this.toolStripMenuItem3,
             this.tsAbout,
             this.exitToolStripMenuItem1,
             this.tsExit});
             this.ctxMnu.Name = "ctxMnu";
-            this.ctxMnu.Size = new System.Drawing.Size(146, 82);
+            this.ctxMnu.Size = new System.Drawing.Size(153, 110);
             // 
             // tsViewBasket
             // 
+            this.tsViewBasket.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tsViewBasket.Name = "tsViewBasket";
-            this.tsViewBasket.Size = new System.Drawing.Size(145, 22);
+            this.tsViewBasket.Size = new System.Drawing.Size(152, 22);
             this.tsViewBasket.Text = "View Basket...";
             this.tsViewBasket.Click += new System.EventHandler(this.tsViewBasket_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // tsAbout
             // 
             this.tsAbout.Name = "tsAbout";
-            this.tsAbout.Size = new System.Drawing.Size(145, 22);
+            this.tsAbout.Size = new System.Drawing.Size(152, 22);
             this.tsAbout.Text = "About...";
             this.tsAbout.Click += new System.EventHandler(this.tsAbout_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(142, 6);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // tsExit
             // 
             this.tsExit.Name = "tsExit";
-            this.tsExit.Size = new System.Drawing.Size(145, 22);
+            this.tsExit.Size = new System.Drawing.Size(152, 22);
             this.tsExit.Text = "Exit";
             this.tsExit.Click += new System.EventHandler(this.tsExit_Click);
+            // 
+            // tsStatistics
+            // 
+            this.tsStatistics.Name = "tsStatistics";
+            this.tsStatistics.Size = new System.Drawing.Size(152, 22);
+            this.tsStatistics.Text = "Statistics...";
+            this.tsStatistics.Click += new System.EventHandler(this.tsStatistics_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
             // 
             // frmMain
             // 
@@ -199,7 +216,6 @@
             this.Controls.Add(this.picView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clipboard Basket";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
@@ -229,6 +245,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsAbout;
         private System.Windows.Forms.ToolStripSeparator exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsExit;
+        private System.Windows.Forms.ToolStripMenuItem tsStatistics;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     }
 }
 
