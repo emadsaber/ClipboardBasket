@@ -153,12 +153,33 @@ namespace ClipboardBasket
             }
             MessageBox.Show(stats, "Statistics", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search...")
+            {
+                txtSearch.Text = "";
+            }
+        }
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search...";
+            }
+
+        }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search...") return;
+            if (txtSearch.Text == "") { RefreshItems(); return; }
+            SearchText(txtSearch.Text);
+        }
         #endregion
 
         #region helpers
-        private void RefreshItems()
+        private void RefreshItems(List<ClipboardItem> items = null)
         {
-            var allItems = ClipBoardDBUnity.ClipBoardItems.GetAll().Reverse().ToList();
+            var allItems = items == null ? ClipBoardDBUnity.ClipBoardItems.GetAll().Reverse().ToList() : items;
             lstHistory.ValueMember = "Id";
             lstHistory.DisplayMember = "TextValue";
             lstHistory.DataSource = allItems;
@@ -235,9 +256,12 @@ namespace ClipboardBasket
                 return null;
             }
         }
-
+        private void SearchText(string text)
+        {
+            var items = ClipBoardDBUnity.ClipBoardItems.Find(text).ToList();
+            RefreshItems(items);
+        }
         #endregion
-
 
     }
 }

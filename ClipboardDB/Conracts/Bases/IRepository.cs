@@ -16,5 +16,6 @@ namespace ClipboardDB.Conracts.Bases
         T Get(Guid id);
         IList<T> GetAll();
         T GetLast();
+        IList<T> Find(string criteria);
     }
 }

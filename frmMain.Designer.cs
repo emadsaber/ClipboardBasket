@@ -42,11 +42,12 @@
             this.ctxMnu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsViewBasket = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsStatistics = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsStatistics = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.ctxMnu.SuspendLayout();
@@ -57,9 +58,9 @@
             this.lstHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lstHistory.FormattingEnabled = true;
-            this.lstHistory.Location = new System.Drawing.Point(12, 17);
+            this.lstHistory.Location = new System.Drawing.Point(12, 43);
             this.lstHistory.Name = "lstHistory";
-            this.lstHistory.Size = new System.Drawing.Size(218, 277);
+            this.lstHistory.Size = new System.Drawing.Size(218, 251);
             this.lstHistory.TabIndex = 2;
             this.lstHistory.SelectedIndexChanged += new System.EventHandler(this.lstHistory_SelectedIndexChanged);
             this.lstHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstHistory_MouseDoubleClick);
@@ -171,6 +172,18 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
+            // tsStatistics
+            // 
+            this.tsStatistics.Name = "tsStatistics";
+            this.tsStatistics.Size = new System.Drawing.Size(152, 22);
+            this.tsStatistics.Text = "Statistics...";
+            this.tsStatistics.Click += new System.EventHandler(this.tsStatistics_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
+            // 
             // tsAbout
             // 
             this.tsAbout.Name = "tsAbout";
@@ -190,23 +203,24 @@
             this.tsExit.Text = "Exit";
             this.tsExit.Click += new System.EventHandler(this.tsExit_Click);
             // 
-            // tsStatistics
+            // txtSearch
             // 
-            this.tsStatistics.Name = "tsStatistics";
-            this.tsStatistics.Size = new System.Drawing.Size(152, 22);
-            this.tsStatistics.Text = "Statistics...";
-            this.tsStatistics.Click += new System.EventHandler(this.tsStatistics_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(12, 13);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(218, 20);
+            this.txtSearch.TabIndex = 10;
+            this.txtSearch.Text = "Search...";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 352);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDeleteAll);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnDelete);
@@ -247,6 +261,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsExit;
         private System.Windows.Forms.ToolStripMenuItem tsStatistics;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
 

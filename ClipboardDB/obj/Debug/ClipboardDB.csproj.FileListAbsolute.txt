@@ -11,3 +11,4 @@ C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\bin\Debug\Polenter.
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojResolveAssemblyReference.cache
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.dll
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.pdb
+D:\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojResolveAssemblyReference.cache

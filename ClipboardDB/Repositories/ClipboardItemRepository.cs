@@ -56,6 +56,10 @@ namespace ClipboardDB.Repositories
         {
             return _ctx.ClipBoardItems.Last();
         }
+        public IList<ClipboardItem> Find(string criteria)
+        {
+            return _ctx.ClipBoardItems.Where(x => x.Type == Models.Common.ItemType.Text && x.TextValue.Contains(criteria)).ToList();
+        }
         public bool Update(ClipboardItem entity)
         {
             var index = _ctx.ClipBoardItems.FindIndex(x => x.Id == entity.Id);

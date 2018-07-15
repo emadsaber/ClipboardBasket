@@ -18,3 +18,4 @@ C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardCatcher\obj\Debug\Clip
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.csproj.GenerateResource.Cache
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.dll
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.pdb
+D:\Repos\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.csprojResolveAssemblyReference.cache
