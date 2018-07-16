@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -52,6 +53,12 @@ namespace ClipboardCatcher
                     //Fire event
                     this.ImageCopied.Invoke(this, image);
                 }
+                else if (iData.GetDataPresent(DataFormats.FileDrop))
+                {
+                    var files = (string[])iData.GetData(DataFormats.FileDrop);
+                    //Fire event
+                    this.FilesCopied.Invoke(this, files);
+                }
             }
         }
         private void CatcherForm_Load(object sender, EventArgs e)
@@ -68,6 +75,7 @@ namespace ClipboardCatcher
 
         public event EventHandler<string> TextCopied = new EventHandler<string>((x, y) => { return; });
         public event EventHandler<Bitmap> ImageCopied = new EventHandler<Bitmap>((x, y) => { return; });
+        public event EventHandler<string[]> FilesCopied = new EventHandler<string[]>((x, y) => { return; });
 
         #endregion
     }
