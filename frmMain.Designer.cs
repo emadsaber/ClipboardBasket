@@ -48,6 +48,7 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.chkDisableNotifications = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.ctxMnu.SuspendLayout();
@@ -60,7 +61,7 @@
             this.lstHistory.FormattingEnabled = true;
             this.lstHistory.Location = new System.Drawing.Point(12, 43);
             this.lstHistory.Name = "lstHistory";
-            this.lstHistory.Size = new System.Drawing.Size(218, 251);
+            this.lstHistory.Size = new System.Drawing.Size(218, 225);
             this.lstHistory.TabIndex = 2;
             this.lstHistory.SelectedIndexChanged += new System.EventHandler(this.lstHistory_SelectedIndexChanged);
             this.lstHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstHistory_MouseDoubleClick);
@@ -215,11 +216,23 @@
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
+            // chkDisableNotifications
+            // 
+            this.chkDisableNotifications.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkDisableNotifications.AutoSize = true;
+            this.chkDisableNotifications.Location = new System.Drawing.Point(12, 276);
+            this.chkDisableNotifications.Name = "chkDisableNotifications";
+            this.chkDisableNotifications.Size = new System.Drawing.Size(122, 17);
+            this.chkDisableNotifications.TabIndex = 11;
+            this.chkDisableNotifications.Text = "Disable Notifications";
+            this.chkDisableNotifications.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 352);
+            this.Controls.Add(this.chkDisableNotifications);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDeleteAll);
             this.Controls.Add(this.statusStrip1);
@@ -232,7 +245,6 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clipboard Basket";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picView)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -262,6 +274,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsStatistics;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.CheckBox chkDisableNotifications;
     }
 }
 

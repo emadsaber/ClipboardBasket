@@ -155,7 +155,7 @@ namespace ClipboardBasket
         }
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Search...")
+            if (txtSearch.Text == Constants.UI.SearchPlaceHolder)
             {
                 txtSearch.Text = "";
             }
@@ -164,13 +164,13 @@ namespace ClipboardBasket
         {
             if (txtSearch.Text == "")
             {
-                txtSearch.Text = "Search...";
+                txtSearch.Text = Constants.UI.SearchPlaceHolder;
             }
 
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Search...") return;
+            if (txtSearch.Text == Constants.UI.SearchPlaceHolder) return;
             if (txtSearch.Text == "") { RefreshItems(); return; }
             SearchText(txtSearch.Text);
         }
@@ -197,8 +197,8 @@ namespace ClipboardBasket
         private void ShowStatus(string status)
         {
             lblStatus.Text = status;
-
-            notifier.ShowBalloonTip(3000, "Clipboard Basket", status, ToolTipIcon.Info);
+            if(! chkDisableNotifications.Checked)
+                notifier.ShowBalloonTip(3000, "Clipboard Basket", status, ToolTipIcon.Info);
         }
         private void CopySelected()
         {
@@ -262,6 +262,6 @@ namespace ClipboardBasket
             RefreshItems(items);
         }
         #endregion
-
+        
     }
 }
