@@ -230,6 +230,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnUpdate.Location = new System.Drawing.Point(157, 271);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 28);
