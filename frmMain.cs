@@ -41,7 +41,7 @@ namespace ClipboardBasket
                 Id = Guid.NewGuid(),
                 TimeStamp = DateTime.Now,
                 Type = ItemType.Bitmap,
-                TextValue = "Image",
+                TextValue = "<Image>",
                 ImageValue = GetImageBytes(e)
             });
             ShowStatus("New Item detected!");
