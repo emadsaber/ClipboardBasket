@@ -8,7 +8,6 @@ C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\bin\Debug\Clipboard
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\bin\Debug\ClipboardDB.dll
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\bin\Debug\ClipboardDB.pdb
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\bin\Debug\Polenter.SharpSerializer.PCL.dll
-C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojResolveAssemblyReference.cache
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.dll
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.pdb
 D:\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojResolveAssemblyReference.cache
