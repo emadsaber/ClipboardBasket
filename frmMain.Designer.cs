@@ -49,6 +49,7 @@
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.chkDisableNotifications = new System.Windows.Forms.CheckBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.ctxMnu.SuspendLayout();
@@ -227,11 +228,22 @@
             this.chkDisableNotifications.Text = "Disable Notifications";
             this.chkDisableNotifications.UseVisualStyleBackColor = true;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(157, 271);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(74, 28);
+            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 352);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.chkDisableNotifications);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDeleteAll);
@@ -275,6 +287,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.CheckBox chkDisableNotifications;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

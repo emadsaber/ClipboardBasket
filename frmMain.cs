@@ -174,6 +174,13 @@ namespace ClipboardBasket
             if (txtSearch.Text == "") { RefreshItems(); return; }
             SearchText(txtSearch.Text);
         }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (lstHistory.SelectedIndex == -1) return;
+            if (lstHistory.SelectedValue == null) return;
+
+            UpdateSelected();
+        }
         #endregion
 
         #region helpers
@@ -197,7 +204,7 @@ namespace ClipboardBasket
         private void ShowStatus(string status)
         {
             lblStatus.Text = status;
-            if(! chkDisableNotifications.Checked)
+            if (!chkDisableNotifications.Checked)
                 notifier.ShowBalloonTip(3000, "Clipboard Basket", status, ToolTipIcon.Info);
         }
         private void CopySelected()
@@ -229,6 +236,33 @@ namespace ClipboardBasket
             }
 
             RefreshItems();
+        }
+        private void UpdateSelected()
+        {
+            var value = Guid.Parse(lstHistory.SelectedValue.ToString());
+            if (value == null) return;
+
+            var selectedCBItem = ClipBoardDBUnity.ClipBoardItems.Get(value);
+            if (selectedCBItem == null) return;
+
+            if (selectedCBItem.Type == ItemType.Bitmap)
+            {
+                ShowStatus("Image updating not supported");
+            }
+            else if (selectedCBItem.Type == ItemType.Text)
+            {
+                selectedCBItem.TextValue = rtbView.Text;
+
+                if (ClipBoardDBUnity.ClipBoardItems.Update(selectedCBItem))
+                {
+                    ShowStatus("Item updated");
+                    RefreshItems();
+                }
+                else
+                {
+                    ShowStatus("Failed to update");
+                }
+            }
         }
         private void ViewBasket()
         {
@@ -262,6 +296,5 @@ namespace ClipboardBasket
             RefreshItems(items);
         }
         #endregion
-        
     }
 }
