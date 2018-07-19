@@ -181,6 +181,13 @@ namespace ClipboardBasket
 
             UpdateSelected();
         }
+        private void frmMain_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+            }
+        }
         #endregion
 
         #region helpers
@@ -266,8 +273,8 @@ namespace ClipboardBasket
         }
         private void ViewBasket()
         {
-            this.WindowState = FormWindowState.Normal;
             this.Show();
+            this.WindowState = FormWindowState.Normal;
             this.BringToFront();
         }
         private string GetStatistics()

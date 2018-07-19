@@ -63,7 +63,7 @@
             this.lstHistory.Location = new System.Drawing.Point(12, 43);
             this.lstHistory.Name = "lstHistory";
             this.lstHistory.Size = new System.Drawing.Size(218, 225);
-            this.lstHistory.TabIndex = 2;
+            this.lstHistory.TabIndex = 1;
             this.lstHistory.SelectedIndexChanged += new System.EventHandler(this.lstHistory_SelectedIndexChanged);
             this.lstHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstHistory_MouseDoubleClick);
             // 
@@ -76,7 +76,7 @@
             this.rtbView.Name = "rtbView";
             this.rtbView.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.rtbView.Size = new System.Drawing.Size(590, 307);
-            this.rtbView.TabIndex = 3;
+            this.rtbView.TabIndex = 7;
             this.rtbView.Text = "";
             // 
             // picView
@@ -97,7 +97,7 @@
             this.btnCopy.Location = new System.Drawing.Point(9, 299);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(74, 28);
-            this.btnCopy.TabIndex = 5;
+            this.btnCopy.TabIndex = 4;
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
@@ -108,7 +108,7 @@
             this.btnDelete.Location = new System.Drawing.Point(83, 299);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(74, 28);
-            this.btnDelete.TabIndex = 7;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -135,7 +135,7 @@
             this.btnDeleteAll.Location = new System.Drawing.Point(157, 299);
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Size = new System.Drawing.Size(74, 28);
-            this.btnDeleteAll.TabIndex = 9;
+            this.btnDeleteAll.TabIndex = 6;
             this.btnDeleteAll.Text = "Delete All";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
             this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
@@ -211,7 +211,7 @@
             this.txtSearch.Location = new System.Drawing.Point(12, 13);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(218, 20);
-            this.txtSearch.TabIndex = 10;
+            this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Search...";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
@@ -224,7 +224,7 @@
             this.chkDisableNotifications.Location = new System.Drawing.Point(12, 276);
             this.chkDisableNotifications.Name = "chkDisableNotifications";
             this.chkDisableNotifications.Size = new System.Drawing.Size(122, 17);
-            this.chkDisableNotifications.TabIndex = 11;
+            this.chkDisableNotifications.TabIndex = 2;
             this.chkDisableNotifications.Text = "Disable Notifications";
             this.chkDisableNotifications.UseVisualStyleBackColor = true;
             // 
@@ -233,7 +233,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(157, 271);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 28);
-            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -258,6 +258,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clipboard Basket";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.frmMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.picView)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
