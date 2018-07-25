@@ -220,6 +220,7 @@ namespace ClipboardBasket
         }
         private Image GetImage(byte[] bytes)
         {
+            if (bytes == null) return null;
             var fs = new MemoryStream(bytes);
             return Bitmap.FromStream(fs);
         }
