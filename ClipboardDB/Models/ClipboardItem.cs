@@ -15,5 +15,6 @@ namespace ClipboardDB.Models
         public ItemType Type { get; set; }
         public string TextValue { get; set; } 
         public byte[] ImageValue { get; set; }
+        public string[] FilesValue { get; set; }
     }
 }

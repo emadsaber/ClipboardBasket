@@ -4,6 +4,7 @@ using ClipboardDB.Models;
 using ClipboardDB.Models.Common;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -30,9 +31,22 @@ namespace ClipboardBasket
         {
             this.TextCopied += Form1_TextCopied;
             this.ImageCopied += FrmMain_ImageCopied;
-
+            this.FilesCopied += FrmMain_FilesCopied;
             RefreshItems();
 
+        }
+        private void FrmMain_FilesCopied(object sender, string[] e)
+        {
+            ClipBoardDBUnity.ClipBoardItems.Add(new ClipboardItem()
+            {
+                Id = Guid.NewGuid(),
+                TimeStamp = DateTime.Now,
+                Type = ItemType.Files,
+                TextValue = "<Files>",
+                FilesValue = e
+            });
+            ShowStatus("New Item detected!");
+            RefreshItems();
         }
         private void FrmMain_ImageCopied(object sender, Bitmap e)
         {
@@ -83,6 +97,12 @@ namespace ClipboardBasket
                 picView.Visible = true;
                 picView.BackgroundImageLayout = ImageLayout.Center;
                 picView.BackgroundImage = GetImage(selectedCBItem.ImageValue);
+            }
+            else if(selectedCBItem.Type == ItemType.Files)
+            {
+                rtbView.Visible = true;
+                picView.Visible = false;
+                rtbView.Text = GetFilesString(selectedCBItem.FilesValue);
             }
         }
         private void btnCopy_Click(object sender, EventArgs e)
@@ -230,6 +250,13 @@ namespace ClipboardBasket
             {
                 Clipboard.SetImage(GetImage(selectedCBItem.ImageValue));
             }
+            else if (selectedCBItem.Type == ItemType.Files)
+            {
+                var collection = new StringCollection();
+                collection.AddRange(selectedCBItem.FilesValue);
+                Clipboard.SetFileDropList(collection);
+            }
+
             if (ClipBoardDBUnity.ClipBoardItems.Delete(value))
             {
                 if (ClipBoardDBUnity.ClipBoardItems.Delete(ClipBoardDBUnity.ClipBoardItems.GetLast()))
@@ -270,6 +297,19 @@ namespace ClipboardBasket
                     ShowStatus("Failed to update");
                 }
             }
+            else if(selectedCBItem.Type == ItemType.Files)
+            {
+                selectedCBItem.FilesValue = GetFilesArray(rtbView.Text);
+                if (ClipBoardDBUnity.ClipBoardItems.Update(selectedCBItem))
+                {
+                    ShowStatus("Item updated");
+                    RefreshItems();
+                }
+                else
+                {
+                    ShowStatus("Failed to update");
+                }
+            }
         }
         private void ViewBasket()
         {
@@ -289,6 +329,8 @@ namespace ClipboardBasket
                 stats.AppendLine();
                 stats.AppendLine($"Images In Basket: {allItems.Count(x => x.Type == ItemType.Bitmap)}");
                 stats.AppendLine();
+                stats.AppendLine($"Files In Basket: {allItems.Count(x => x.Type == ItemType.Files)}");
+                stats.AppendLine();
 
                 return stats.ToString();
             }
@@ -301,6 +343,16 @@ namespace ClipboardBasket
         {
             var items = ClipBoardDBUnity.ClipBoardItems.Find(text).ToList();
             RefreshItems(items);
+        }
+        private string GetFilesString(string[] filesValue)
+        {
+            if (filesValue == null) return "";
+            return string.Join(Environment.NewLine, filesValue);
+        }
+        private string[] GetFilesArray(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return null;
+            return text.Split('\n');
         }
         #endregion
     }

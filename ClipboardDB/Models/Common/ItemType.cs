@@ -10,5 +10,6 @@ namespace ClipboardDB.Models.Common
     {
         Text = 1,
         Bitmap = 2,
+        Files = 3,
     }
 }

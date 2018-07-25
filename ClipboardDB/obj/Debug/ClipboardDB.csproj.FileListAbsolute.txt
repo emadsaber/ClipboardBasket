@@ -11,3 +11,12 @@ C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\bin\Debug\Polenter.
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.dll
 C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.pdb
 D:\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojResolveAssemblyReference.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Debug\ClipboardDB.dll.config
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Debug\ClipboardDB.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Debug\ClipboardDB.pdb
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Debug\Polenter.SharpSerializer.PCL.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojAssemblyReference.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csproj.CoreCompileInputs.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csproj.CopyComplete
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.pdb
