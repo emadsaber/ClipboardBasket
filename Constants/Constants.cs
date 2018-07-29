@@ -10,7 +10,8 @@ namespace ClipboardBasket
     {
         public static class UI
         {
-            public static string SearchPlaceHolder = "Search...";
+            public const string SearchPlaceHolder = "Search...";
+            public const int PageSize = 50; 
         }
     }
 }

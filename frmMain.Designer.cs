@@ -50,6 +50,13 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.chkDisableNotifications = new System.Windows.Forms.CheckBox();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.lblPageNo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblPageCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.ctxMnu.SuspendLayout();
@@ -62,7 +69,7 @@
             this.lstHistory.FormattingEnabled = true;
             this.lstHistory.Location = new System.Drawing.Point(12, 43);
             this.lstHistory.Name = "lstHistory";
-            this.lstHistory.Size = new System.Drawing.Size(218, 225);
+            this.lstHistory.Size = new System.Drawing.Size(218, 329);
             this.lstHistory.TabIndex = 1;
             this.lstHistory.SelectedIndexChanged += new System.EventHandler(this.lstHistory_SelectedIndexChanged);
             this.lstHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstHistory_MouseDoubleClick);
@@ -75,7 +82,7 @@
             this.rtbView.Location = new System.Drawing.Point(237, 13);
             this.rtbView.Name = "rtbView";
             this.rtbView.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbView.Size = new System.Drawing.Size(590, 307);
+            this.rtbView.Size = new System.Drawing.Size(590, 445);
             this.rtbView.TabIndex = 7;
             this.rtbView.Text = "";
             // 
@@ -86,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picView.Location = new System.Drawing.Point(237, 13);
             this.picView.Name = "picView";
-            this.picView.Size = new System.Drawing.Size(590, 308);
+            this.picView.Size = new System.Drawing.Size(590, 446);
             this.picView.TabIndex = 4;
             this.picView.TabStop = false;
             this.picView.Visible = false;
@@ -94,7 +101,7 @@
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCopy.Location = new System.Drawing.Point(9, 299);
+            this.btnCopy.Location = new System.Drawing.Point(9, 437);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(74, 28);
             this.btnCopy.TabIndex = 4;
@@ -105,7 +112,7 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.Location = new System.Drawing.Point(83, 299);
+            this.btnDelete.Location = new System.Drawing.Point(83, 437);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(74, 28);
             this.btnDelete.TabIndex = 5;
@@ -117,7 +124,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 330);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 468);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(839, 22);
             this.statusStrip1.TabIndex = 8;
@@ -132,7 +139,7 @@
             // btnDeleteAll
             // 
             this.btnDeleteAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeleteAll.Location = new System.Drawing.Point(157, 299);
+            this.btnDeleteAll.Location = new System.Drawing.Point(157, 437);
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Size = new System.Drawing.Size(74, 28);
             this.btnDeleteAll.TabIndex = 6;
@@ -221,7 +228,7 @@
             // 
             this.chkDisableNotifications.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkDisableNotifications.AutoSize = true;
-            this.chkDisableNotifications.Location = new System.Drawing.Point(12, 276);
+            this.chkDisableNotifications.Location = new System.Drawing.Point(12, 414);
             this.chkDisableNotifications.Name = "chkDisableNotifications";
             this.chkDisableNotifications.Size = new System.Drawing.Size(122, 17);
             this.chkDisableNotifications.TabIndex = 2;
@@ -231,7 +238,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUpdate.Location = new System.Drawing.Point(157, 271);
+            this.btnUpdate.Location = new System.Drawing.Point(157, 409);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 28);
             this.btnUpdate.TabIndex = 3;
@@ -239,11 +246,92 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnFirst
+            // 
+            this.btnFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnFirst.Location = new System.Drawing.Point(9, 380);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(36, 23);
+            this.btnFirst.TabIndex = 9;
+            this.btnFirst.Text = "|<";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrevious.Location = new System.Drawing.Point(51, 380);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(36, 23);
+            this.btnPrevious.TabIndex = 9;
+            this.btnPrevious.Text = "<";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNext.Location = new System.Drawing.Point(153, 380);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(36, 23);
+            this.btnNext.TabIndex = 9;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLast.Location = new System.Drawing.Point(195, 380);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(36, 23);
+            this.btnLast.TabIndex = 9;
+            this.btnLast.Text = ">|";
+            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // lblPageNo
+            // 
+            this.lblPageNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblPageNo.AutoSize = true;
+            this.lblPageNo.Location = new System.Drawing.Point(96, 385);
+            this.lblPageNo.Name = "lblPageNo";
+            this.lblPageNo.Size = new System.Drawing.Size(17, 13);
+            this.lblPageNo.TabIndex = 10;
+            this.lblPageNo.Text = "xx";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(112, 385);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(12, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "/";
+            // 
+            // lblPageCount
+            // 
+            this.lblPageCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblPageCount.AutoSize = true;
+            this.lblPageCount.Location = new System.Drawing.Point(128, 385);
+            this.lblPageCount.Name = "lblPageCount";
+            this.lblPageCount.Size = new System.Drawing.Size(17, 13);
+            this.lblPageCount.TabIndex = 10;
+            this.lblPageCount.Text = "xx";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 352);
+            this.ClientSize = new System.Drawing.Size(839, 490);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPageCount);
+            this.Controls.Add(this.lblPageNo);
+            this.Controls.Add(this.btnLast);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPrevious);
+            this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.chkDisableNotifications);
             this.Controls.Add(this.txtSearch);
@@ -290,6 +378,13 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.CheckBox chkDisableNotifications;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Label lblPageNo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPageCount;
     }
 }
 

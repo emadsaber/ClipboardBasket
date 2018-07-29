@@ -50,7 +50,16 @@ namespace ClipboardDB.Repositories
 
         public IList<ClipboardItem> GetAll()
         {
-            return _ctx.ClipBoardItems.ToList();
+            return _ctx.ClipBoardItems.OrderByDescending(x => x.TimeStamp).ToList();
+        }
+        public IList<ClipboardItem> GetPage(int pageIndex, int pageSize)
+        {
+            var items = _ctx.ClipBoardItems.OrderByDescending(x => x.TimeStamp).Skip(pageIndex * pageSize).Take(pageSize);
+            return items.ToList();
+        }
+        public int Count()
+        {
+            return _ctx.ClipBoardItems.Count();
         }
         public ClipboardItem GetLast()
         {
@@ -59,7 +68,7 @@ namespace ClipboardDB.Repositories
         public IList<ClipboardItem> Find(string criteria)
         {
             return _ctx.ClipBoardItems.Where(x => (x.Type == Models.Common.ItemType.Text && x.TextValue.ToLower().Contains(criteria.ToLower())) ||
-                                                  (x.Type == Models.Common.ItemType.Files && string.Join(",", x.FilesValue).ToLower().Contains(criteria.ToLower()))).ToList();
+                                                  (x.Type == Models.Common.ItemType.Files && string.Join(",", x.FilesValue).ToLower().Contains(criteria.ToLower()))).OrderByDescending(x => x.TimeStamp).ToList();
         }
         public bool Update(ClipboardItem entity)
         {

@@ -25,6 +25,13 @@ namespace ClipboardBasket
         }
 
         #endregion
+        #region Properties
+        private int _pageCount;
+        private int _pageIndex;
+        public int CurrentPageIndex { get { return _pageIndex; } set { _pageIndex = value; lblPageNo.Text = (value + 1).ToString(); } }
+        public int PagesCount { get { return _pageCount; } set { _pageCount = value; this.lblPageCount.Text = value.ToString(); } }
+
+        #endregion
 
         #region Event Handlers
         private void Form1_Load(object sender, EventArgs e)
@@ -32,7 +39,8 @@ namespace ClipboardBasket
             this.TextCopied += Form1_TextCopied;
             this.ImageCopied += FrmMain_ImageCopied;
             this.FilesCopied += FrmMain_FilesCopied;
-            RefreshItems();
+
+            GetPage(CurrentPageIndex);
 
         }
         private void FrmMain_FilesCopied(object sender, string[] e)
@@ -46,7 +54,7 @@ namespace ClipboardBasket
                 FilesValue = e
             });
             ShowStatus("New Item detected!");
-            RefreshItems();
+            GetPage(0);
         }
         private void FrmMain_ImageCopied(object sender, Bitmap e)
         {
@@ -59,7 +67,8 @@ namespace ClipboardBasket
                 ImageValue = GetImageBytes(e)
             });
             ShowStatus("New Item detected!");
-            RefreshItems();
+            GetPage(0);
+
         }
         private void Form1_TextCopied(object sender, string e)
         {
@@ -72,7 +81,8 @@ namespace ClipboardBasket
                 ImageValue = null
             });
             ShowStatus("New Item detected!");
-            RefreshItems();
+            GetPage(0);
+
         }
         private void lstHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -130,7 +140,7 @@ namespace ClipboardBasket
             if (ClipBoardDBUnity.ClipBoardItems.Delete(value))
             {
                 ShowStatus("Deleted Successfully");
-                RefreshItems();
+                GetPage(CurrentPageIndex);
             }
         }
         private void btnDeleteAll_Click(object sender, EventArgs e)
@@ -146,7 +156,7 @@ namespace ClipboardBasket
             {
                 ShowStatus("Failed to delete all history");
             }
-            RefreshItems();
+            GetPage(0);
         }
         private void tsViewBasket_Click(object sender, EventArgs e)
         {
@@ -191,7 +201,7 @@ namespace ClipboardBasket
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.Text == Constants.UI.SearchPlaceHolder) return;
-            if (txtSearch.Text == "") { RefreshItems(); return; }
+            if (txtSearch.Text == "") { GetPage(0); return; }
             SearchText(txtSearch.Text);
         }
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -208,12 +218,30 @@ namespace ClipboardBasket
                 this.Hide();
             }
         }
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            GetPage(0);
+        }
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentPageIndex == 0) return;
+            GetPage(this.CurrentPageIndex - 1);
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentPageIndex == this.PagesCount - 1) return;
+            GetPage(this.CurrentPageIndex + 1);
+        }
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            GetPage(this.PagesCount - 1);
+        }
         #endregion
 
         #region helpers
         private void RefreshItems(List<ClipboardItem> items = null)
         {
-            var allItems = items == null ? ClipBoardDBUnity.ClipBoardItems.GetAll().Reverse().ToList() : items;
+            var allItems = items == null ? ClipBoardDBUnity.ClipBoardItems.GetAll().ToList() : items;
             lstHistory.ValueMember = "Id";
             lstHistory.DisplayMember = "TextValue";
             lstHistory.DataSource = allItems;
@@ -270,7 +298,7 @@ namespace ClipboardBasket
                 ShowStatus("Failed to copy item");
             }
 
-            RefreshItems();
+            GetPage(0);
         }
         private void UpdateSelected()
         {
@@ -291,7 +319,7 @@ namespace ClipboardBasket
                 if (ClipBoardDBUnity.ClipBoardItems.Update(selectedCBItem))
                 {
                     ShowStatus("Item updated");
-                    RefreshItems();
+                    GetPage(CurrentPageIndex); 
                 }
                 else
                 {
@@ -304,7 +332,7 @@ namespace ClipboardBasket
                 if (ClipBoardDBUnity.ClipBoardItems.Update(selectedCBItem))
                 {
                     ShowStatus("Item updated");
-                    RefreshItems();
+                    GetPage(CurrentPageIndex);
                 }
                 else
                 {
@@ -355,6 +383,16 @@ namespace ClipboardBasket
             if (string.IsNullOrEmpty(text)) return null;
             return text.Split('\n');
         }
+        private void GetPage(int index)
+        {
+            var count = ClipBoardDBUnity.ClipBoardItems.Count();
+            var pageSize = Constants.UI.PageSize;
+            this.PagesCount = count % pageSize == 0 ? count / pageSize : (count / pageSize) + 1;
+
+            RefreshItems(ClipBoardDBUnity.ClipBoardItems.GetPage(index, Constants.UI.PageSize).ToList());
+            this.CurrentPageIndex = index;
+        }
         #endregion
+
     }
 }

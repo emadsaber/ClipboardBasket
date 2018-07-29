@@ -15,6 +15,8 @@ namespace ClipboardDB.Conracts.Bases
         bool Update(T entity);
         T Get(Guid id);
         IList<T> GetAll();
+        IList<T> GetPage(int pageIndex, int pageSize);
+        int Count();
         T GetLast();
         IList<T> Find(string criteria);
     }
