@@ -394,5 +394,9 @@ namespace ClipboardBasket
         }
         #endregion
 
+        private void btnShowDatabase_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\ClipboardBasket");
+        }
     }
 }

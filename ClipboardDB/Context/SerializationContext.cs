@@ -56,8 +56,6 @@ namespace ClipboardDB.Context
             return value;
         }
 
-        public string FilePath(string name) { return $"{name}s.DB.xml"; }
-
         public void Dispose()
         {
             this.Dispose();
