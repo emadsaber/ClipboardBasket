@@ -1,0 +1,7 @@
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\bin\Release\ClipboardCatcher.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\bin\Release\ClipboardCatcher.pdb
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.CatcherForm.resources
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.csproj.GenerateResource.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.csproj.CoreCompileInputs.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.pdb

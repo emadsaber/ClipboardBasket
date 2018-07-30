@@ -1,0 +1,9 @@
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Release\ClipboardDB.dll.config
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Release\ClipboardDB.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Release\ClipboardDB.pdb
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\bin\Release\Polenter.SharpSerializer.PCL.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Release\ClipboardDB.csprojAssemblyReference.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Release\ClipboardDB.csproj.CoreCompileInputs.cache
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Release\ClipboardDB.csproj.CopyComplete
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Release\ClipboardDB.dll
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Release\ClipboardDB.pdb
