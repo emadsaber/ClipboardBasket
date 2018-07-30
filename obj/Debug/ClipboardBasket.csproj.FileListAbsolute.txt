@@ -44,3 +44,7 @@ D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.csprojAssembl
 D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.frmMain.resources
 D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.csproj.CoreCompileInputs.cache
 D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.csproj.CopyComplete
+D:\Repos\ClipboardBasket\ClipboardBasket\bin\Debug\ClipboardBasket.exe.manifest
+D:\Repos\ClipboardBasket\ClipboardBasket\bin\Debug\ClipboardBasket.application
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.exe.manifest
+D:\Repos\ClipboardBasket\ClipboardBasket\obj\Debug\ClipboardBasket.application

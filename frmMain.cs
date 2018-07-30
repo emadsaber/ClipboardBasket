@@ -387,7 +387,9 @@ namespace ClipboardBasket
         {
             var count = ClipBoardDBUnity.ClipBoardItems.Count();
             var pageSize = Constants.UI.PageSize;
-            this.PagesCount = count % pageSize == 0 ? count / pageSize : (count / pageSize) + 1;
+            this.PagesCount = count % pageSize == 0
+                                ? count == 0 ? 1 : count / pageSize 
+                                : (count / pageSize) + 1;
 
             RefreshItems(ClipBoardDBUnity.ClipBoardItems.GetPage(index, Constants.UI.PageSize).ToList());
             this.CurrentPageIndex = index;
