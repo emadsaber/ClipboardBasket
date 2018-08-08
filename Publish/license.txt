@@ -1,0 +1,18 @@
+****************************************
+****   Clipboard Basket (1.1)       ****
+****************************************
+
+This app helps you gather the clipboard contents
+and saves them for future use. The program can deal
+with the following clipped types:
+
+** Text
+** Images
+** Files
+** Folders
+
+Don't hesitate to find the source code at GitHub::
+
+https://github.com/emadsaber/ClipboardBasket
+
+And you also can mail me at :: emadsaber89@gmail.com
