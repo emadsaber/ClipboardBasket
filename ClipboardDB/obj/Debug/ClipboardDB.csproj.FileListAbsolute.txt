@@ -20,3 +20,4 @@ D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.cspro
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csproj.CopyComplete
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.dll
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.pdb
+C:\Users\emad.saber\Source\Repos\ClipboardBasket\ClipboardDB\obj\Debug\ClipboardDB.csprojResolveAssemblyReference.cache
