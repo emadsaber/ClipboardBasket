@@ -2,6 +2,7 @@
 using ClipboardDB;
 using ClipboardDB.Models;
 using ClipboardDB.Models.Common;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -25,6 +26,7 @@ namespace ClipboardBasket
         }
 
         #endregion
+
         #region Properties
         private int _pageCount;
         private int _pageIndex;
@@ -89,7 +91,7 @@ namespace ClipboardBasket
             if (lstHistory.SelectedIndex < 0) return;
             if (lstHistory.SelectedValue == null) return;
 
-            var value = Guid.Parse(lstHistory.SelectedValue.ToString()); 
+            var value = Guid.Parse(lstHistory.SelectedValue.ToString());
             if (value == null) return;
 
             var selectedCBItem = ClipBoardDBUnity.ClipBoardItems.Get(value);
@@ -101,14 +103,14 @@ namespace ClipboardBasket
                 picView.Visible = false;
                 rtbView.Text = selectedCBItem.TextValue;
             }
-            else if(selectedCBItem.Type == ItemType.Bitmap)
+            else if (selectedCBItem.Type == ItemType.Bitmap)
             {
                 rtbView.Visible = false;
                 picView.Visible = true;
                 picView.BackgroundImageLayout = ImageLayout.Center;
                 picView.BackgroundImage = GetImage(selectedCBItem.ImageValue);
             }
-            else if(selectedCBItem.Type == ItemType.Files)
+            else if (selectedCBItem.Type == ItemType.Files)
             {
                 rtbView.Visible = true;
                 picView.Visible = false;
@@ -236,6 +238,14 @@ namespace ClipboardBasket
         {
             GetPage(this.PagesCount - 1);
         }
+        private void btnShowDatabase_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\ClipboardBasket");
+        }
+        private void chkStartWithWindows_CheckedChanged(object sender, EventArgs e)
+        {
+            StartWithWindows(chkStartWithWindows.Checked);
+        }
         #endregion
 
         #region helpers
@@ -319,14 +329,14 @@ namespace ClipboardBasket
                 if (ClipBoardDBUnity.ClipBoardItems.Update(selectedCBItem))
                 {
                     ShowStatus("Item updated");
-                    GetPage(CurrentPageIndex); 
+                    GetPage(CurrentPageIndex);
                 }
                 else
                 {
                     ShowStatus("Failed to update");
                 }
             }
-            else if(selectedCBItem.Type == ItemType.Files)
+            else if (selectedCBItem.Type == ItemType.Files)
             {
                 selectedCBItem.FilesValue = GetFilesArray(rtbView.Text);
                 if (ClipBoardDBUnity.ClipBoardItems.Update(selectedCBItem))
@@ -388,17 +398,24 @@ namespace ClipboardBasket
             var count = ClipBoardDBUnity.ClipBoardItems.Count();
             var pageSize = Constants.UI.PageSize;
             this.PagesCount = count % pageSize == 0
-                                ? count == 0 ? 1 : count / pageSize 
+                                ? count == 0 ? 1 : count / pageSize
                                 : (count / pageSize) + 1;
 
             RefreshItems(ClipBoardDBUnity.ClipBoardItems.GetPage(index, Constants.UI.PageSize).ToList());
             this.CurrentPageIndex = index;
         }
+        private void StartWithWindows(bool start)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                if(start)
+                    key.SetValue("Clipboard Basket", "\"" + Application.ExecutablePath + "\"");
+                else
+                    key.DeleteValue("Clipboard Basket", false);
+            }
+        }
         #endregion
 
-        private void btnShowDatabase_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("explorer.exe", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\ClipboardBasket");
-        }
+
     }
 }

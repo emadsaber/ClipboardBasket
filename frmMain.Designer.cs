@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPageCount = new System.Windows.Forms.Label();
             this.btnShowDatabase = new System.Windows.Forms.Button();
+            this.chkStartWithWindows = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.ctxMnu.SuspendLayout();
@@ -332,6 +333,18 @@
             this.btnShowDatabase.UseVisualStyleBackColor = true;
             this.btnShowDatabase.Click += new System.EventHandler(this.btnShowDatabase_Click);
             // 
+            // chkStartWithWindows
+            // 
+            this.chkStartWithWindows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkStartWithWindows.AutoSize = true;
+            this.chkStartWithWindows.Location = new System.Drawing.Point(705, 419);
+            this.chkStartWithWindows.Name = "chkStartWithWindows";
+            this.chkStartWithWindows.Size = new System.Drawing.Size(117, 17);
+            this.chkStartWithWindows.TabIndex = 12;
+            this.chkStartWithWindows.Text = "Start with Windows";
+            this.chkStartWithWindows.UseVisualStyleBackColor = true;
+            this.chkStartWithWindows.CheckedChanged += new System.EventHandler(this.chkStartWithWindows_CheckedChanged);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +359,7 @@
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.chkStartWithWindows);
             this.Controls.Add(this.chkDisableNotifications);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDeleteAll);
@@ -399,6 +413,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPageCount;
         private System.Windows.Forms.Button btnShowDatabase;
+        private System.Windows.Forms.CheckBox chkStartWithWindows;
     }
 }
 

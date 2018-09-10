@@ -5,3 +5,4 @@ D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardC
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.csproj.CoreCompileInputs.cache
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.dll
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.pdb
+D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Release\ClipboardCatcher.csprojAssemblyReference.cache
