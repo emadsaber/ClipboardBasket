@@ -7,7 +7,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{6E7532D6-D756-4A1F-9151-4639D81C7F86}
 AppName=Clipboard Basket
-AppVersion=1.1
+AppVersion=1.2
 ;AppVerName=Clipboard Basket 1.1
 AppPublisher=Emad Saber
 AppPublisherURL=http://emadsaber89.wordpress.com
