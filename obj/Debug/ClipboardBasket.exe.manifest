@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Images\trash_big.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ClipboardBasket" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ClipboardBasket" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="ClipboardBasket.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClipboardBasket.exe" size="82904">
-      <assemblyIdentity name="ClipboardBasket" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClipboardBasket.exe" size="83928">
+      <assemblyIdentity name="ClipboardBasket" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/wtXo6aylRjrXV4SNg/ccYautSneYjMinOAQ7z0dy8k=</dsig:DigestValue>
+        <dsig:DigestValue>G1KzkGTI75Dh/p09wRactt9v6pLxXMu8LLQ0AsxU5qc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClipboardCatcher.dll" size="7680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClipboardCatcher.dll" size="10240">
       <assemblyIdentity name="ClipboardCatcher" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>U0oMm4h14L1lvWLYCk0rBTCBcDypdMoRiBUyF/3zSjw=</dsig:DigestValue>
+        <dsig:DigestValue>GbxUUwXlRD5HoplFAiUJrUiUIivcBw0MEtJ8XQtt3MQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>P5VRTPSYapAtY/sFxfKCz0yAS3JN8ivtIdGO2oXL1UA=</dsig:DigestValue>
+        <dsig:DigestValue>boJKKD+5yw1gApfUSLXdgEHUiSnObyT8zYq3osGIIM8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

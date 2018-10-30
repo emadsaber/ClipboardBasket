@@ -25,11 +25,29 @@ namespace ClipboardCatcher
         private IntPtr _clipboardViewerNext;
 
         #endregion
+        
+        #region Events
+
+        public event EventHandler<string> TextCopied = new EventHandler<string>((x, y) => { return; });
+        public event EventHandler<Bitmap> ImageCopied = new EventHandler<Bitmap>((x, y) => { return; });
+        public event EventHandler<string[]> FilesCopied = new EventHandler<string[]>((x, y) => { return; });
+        public event EventHandler BasketHotKeyPressed = new EventHandler((x, y) => { return; });
+
+        #endregion
+
+        #region Properties
+
+        public HotKey BaksetHotKey { get; set; }
+        public bool IsBasketOpen { get; set; }
+
+        #endregion
 
         #region Constructors
         public CatcherForm()
         {
             InitializeComponent();
+
+            Init();
         }
 
         #endregion
@@ -41,8 +59,10 @@ namespace ClipboardCatcher
             if (m.Msg == WM_DRAWCLIPBOARD)
             {
                 IDataObject iData = Clipboard.GetDataObject();
+
                 if (iData.GetDataPresent(DataFormats.Text))
                 {
+                    //this.IsB
                     string text = (string)iData.GetData(DataFormats.UnicodeText);
                     //Fire event
                     this.TextCopied.Invoke(this, text);
@@ -71,11 +91,18 @@ namespace ClipboardCatcher
         }
         #endregion
 
-        #region Events
+        #region Helpers
 
-        public event EventHandler<string> TextCopied = new EventHandler<string>((x, y) => { return; });
-        public event EventHandler<Bitmap> ImageCopied = new EventHandler<Bitmap>((x, y) => { return; });
-        public event EventHandler<string[]> FilesCopied = new EventHandler<string[]>((x, y) => { return; });
+        private void Init()
+        {
+            this.BaksetHotKey = new HotKey(Keys.Q, HotKey.KeyModifiers.Control, BasketHotKeyPressed);
+            this.BasketHotKeyPressed += CatcherForm_BasketHotKeyPressed;
+        }
+
+        private void CatcherForm_BasketHotKeyPressed(object sender, EventArgs e)
+        {
+            this.IsBasketOpen = true;
+        }
 
         #endregion
     }

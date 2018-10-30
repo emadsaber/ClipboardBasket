@@ -48,6 +48,7 @@
     <Compile Include="CatcherForm.Designer.cs">
       <DependentUpon>CatcherForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HotKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

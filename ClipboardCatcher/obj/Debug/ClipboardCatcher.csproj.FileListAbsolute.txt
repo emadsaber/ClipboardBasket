@@ -26,3 +26,11 @@ D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCat
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.csproj.CoreCompileInputs.cache
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.dll
 D:\Repos\ClipboardBasket\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.pdb
+E:\Code\ClipboardBasket\ClipboardCatcher\bin\Debug\ClipboardCatcher.dll
+E:\Code\ClipboardBasket\ClipboardCatcher\bin\Debug\ClipboardCatcher.pdb
+E:\Code\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.csprojResolveAssemblyReference.cache
+E:\Code\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.CatcherForm.resources
+E:\Code\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.csproj.GenerateResource.Cache
+E:\Code\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.csproj.CoreCompileInputs.cache
+E:\Code\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.dll
+E:\Code\ClipboardBasket\ClipboardCatcher\obj\Debug\ClipboardCatcher.pdb
