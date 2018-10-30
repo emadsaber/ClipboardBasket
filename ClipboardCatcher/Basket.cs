@@ -7,7 +7,6 @@ namespace ClipboardCatcher
 {
     public class Basket<T>
     {
-
         #region events
 
         public event EventHandler FillHotKeyPressed = new EventHandler((x, y) => { return; });
@@ -26,10 +25,6 @@ namespace ClipboardCatcher
         /// </summary>
         public List<T> Items { get; set; }
         /// <summary>
-        /// Represents the whole basket items meged as one item ready to be copied or pasted as one unit
-        /// </summary>
-        public T BasketContents { get => GetContents(); }
-        /// <summary>
         /// HotKey to empty the basket into one place
         /// </summary>
         public HotKey EmptyBasketHotKey { get; set; }
@@ -41,7 +36,17 @@ namespace ClipboardCatcher
         /// HotKey to clear all basket items
         /// </summary>
         public HotKey DeleteBasketHotKey { get; set; }
+        /// <summary>
+        /// Indicates that the basket now is capturing something
+        /// </summary>
+        public bool IsGathering { get; set; }
 
+        public Keys FillKey { get; private set; }
+        public Keys EmptyKey { get; private set; }
+        public Keys DeleteKey { get; private set; }
+        public HotKey.KeyModifiers FillModifiers { get; set; }
+        public HotKey.KeyModifiers EmptyModifiers { get; set; }
+        public HotKey.KeyModifiers DeleteModifiers { get; set; }
         #endregion
 
         #region cst
@@ -57,12 +62,30 @@ namespace ClipboardCatcher
             this.EmptyBasketHotKey = new HotKey(emptyKey, emptyModifier, EmptyHotKeyPressed);
             this.FillBasketHotKey = new HotKey(fillKey, fillModifier, FillHotKeyPressed);
             this.DeleteBasketHotKey = new HotKey(deleteKey, deleteModifier, DeleteHotKeyPressed);
+
+            this.Items = new List<T>();
+
+            this.FillKey = fillKey;
+            this.EmptyKey = emptyKey;
+            this.DeleteKey = deleteKey;
+            this.FillModifiers = fillModifier;
+            this.EmptyModifiers = emptyModifier;
+            this.DeleteModifiers = deleteModifier;
         }
 
         #endregion
 
         #region helpers
+        public void UpdateEvents()
+        {
+            this.EmptyBasketHotKey?.UnregisterHotKey();
+            this.FillBasketHotKey?.UnregisterHotKey();
+            this.DeleteBasketHotKey?.UnregisterHotKey();
 
+            this.EmptyBasketHotKey = new HotKey(EmptyKey, EmptyModifiers, EmptyHotKeyPressed);
+            this.FillBasketHotKey = new HotKey(FillKey, FillModifiers, FillHotKeyPressed);
+            this.DeleteBasketHotKey = new HotKey(DeleteKey, DeleteModifiers, DeleteHotKeyPressed);
+        }
         private void Basket_FillHotKeyPressed(object sender, EventArgs e)
         {
 
@@ -78,13 +101,6 @@ namespace ClipboardCatcher
             this.Items?.Clear();
         }
         
-        private T GetContents()
-        {
-            throw new NotImplementedException();
-            //if (this.Items == null) return default(T);
-
-            //var contents = this.Items.Select(x => x);
-        }
         #endregion
     }
 }

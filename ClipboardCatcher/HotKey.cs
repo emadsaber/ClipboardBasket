@@ -40,10 +40,17 @@ namespace ClipboardCatcher
 
         private event EventHandler HotKeyPressed;
 
+        public Keys Key { get; set; }
+        public KeyModifiers Modifier { get; set; }
+
         public HotKey(Keys key, KeyModifiers modifier, EventHandler hotKeyPressed)
         {
             HotKeyPressed = hotKeyPressed;
-            RegisterHotKey(key, modifier);
+        }
+
+        public void Register()
+        {
+            RegisterHotKey(Key, Modifier);
             Application.AddMessageFilter(this);
         }
 
@@ -53,18 +60,20 @@ namespace ClipboardCatcher
             UnregisterHotKey(handle, id);
         }
 
-
-        private void RegisterHotKey(Keys key, KeyModifiers modifier)
+        public void RegisterHotKey(Keys key, KeyModifiers modifier)
         {
             if (key == Keys.None)
                 return;
 
             bool isKeyRegisterd = RegisterHotKey(handle, id, modifier, key);
-            Application.AddMessageFilter(this);
             if (!isKeyRegisterd)
                 throw new ApplicationException("Hotkey allready in use");
         }
 
+        public bool UnregisterHotKey()
+        {
+            return UnregisterHotKey(handle, id);
+        }
 
         public bool PreFilterMessage(ref Message m)
         {
