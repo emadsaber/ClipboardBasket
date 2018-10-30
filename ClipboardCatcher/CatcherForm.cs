@@ -15,6 +15,7 @@ namespace ClipboardCatcher
     public partial class CatcherForm : Form
     {
         #region Externs
+
         [DllImport("User32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr SetClipboardViewer(IntPtr hWndNewViewer);
 
@@ -31,18 +32,18 @@ namespace ClipboardCatcher
         public event EventHandler<string> TextCopied = new EventHandler<string>((x, y) => { return; });
         public event EventHandler<Bitmap> ImageCopied = new EventHandler<Bitmap>((x, y) => { return; });
         public event EventHandler<string[]> FilesCopied = new EventHandler<string[]>((x, y) => { return; });
-        public event EventHandler BasketHotKeyPressed = new EventHandler((x, y) => { return; });
 
         #endregion
 
         #region Properties
 
-        public HotKey BaksetHotKey { get; set; }
-        public bool IsBasketOpen { get; set; }
+        public Basket<string> TextBasket { get; set; }
+        public Basket<string[]> FileBasket { get; set; }
 
         #endregion
 
         #region Constructors
+
         public CatcherForm()
         {
             InitializeComponent();
@@ -53,6 +54,7 @@ namespace ClipboardCatcher
         #endregion
 
         #region Methods
+
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
@@ -89,19 +91,15 @@ namespace ClipboardCatcher
         {
             ChangeClipboardChain(this.Handle, _clipboardViewerNext);
         }
+        
         #endregion
 
         #region Helpers
 
         private void Init()
         {
-            this.BaksetHotKey = new HotKey(Keys.Q, HotKey.KeyModifiers.Control, BasketHotKeyPressed);
-            this.BasketHotKeyPressed += CatcherForm_BasketHotKeyPressed;
-        }
-
-        private void CatcherForm_BasketHotKeyPressed(object sender, EventArgs e)
-        {
-            this.IsBasketOpen = true;
+            this.FileBasket = new Basket<string[]>(Keys.F1, HotKey.KeyModifiers.Control, Keys.F1, HotKey.KeyModifiers.Shift, Keys.F1, HotKey.KeyModifiers.Alt); 
+            this.TextBasket = new Basket<string>(Keys.F2, HotKey.KeyModifiers.Control, Keys.F2, HotKey.KeyModifiers.Shift, Keys.F2, HotKey.KeyModifiers.Alt);
         }
 
         #endregion
