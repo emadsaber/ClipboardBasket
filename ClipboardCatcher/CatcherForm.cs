@@ -59,56 +59,56 @@ namespace ClipboardCatcher
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-            if (m.Msg == WM_DRAWCLIPBOARD)
-            {
-                IDataObject iData = Clipboard.GetDataObject();
+            //if (m.Msg == WM_DRAWCLIPBOARD)
+            //{
+            //    IDataObject iData = Clipboard.GetDataObject();
 
-                if (iData.GetDataPresent(DataFormats.Text))
-                {
+            //    if (iData.GetDataPresent(DataFormats.Text))
+            //    {
 
-                    string text = (string)iData.GetData(DataFormats.UnicodeText);
+            //        string text = (string)iData.GetData(DataFormats.UnicodeText);
 
-                    //check baskets
-                    var isBasketActive = (this.TextBasket != null && this.TextBasket.IsGathering);
+            //        //check baskets
+            //        var isBasketActive = (this.TextBasket != null && this.TextBasket.IsGathering);
 
-                    if (isBasketActive)
-                    {
-                        //Add to basket
-                        this.TextBasket?.Items.Add(text);
-                        this.TextBasket.IsGathering = false;
-                    }
-                    else
-                    {
-                        //Fire event
-                        this.TextCopied.Invoke(this, text);
-                    }
-                }
-                else if (iData.GetDataPresent(DataFormats.Bitmap))
-                {
-                    Bitmap image = (Bitmap)iData.GetData(DataFormats.Bitmap);
-                    //Fire event
-                    this.ImageCopied.Invoke(this, image);
-                }
-                else if (iData.GetDataPresent(DataFormats.FileDrop))
-                {
-                    var files = (string[])iData.GetData(DataFormats.FileDrop);
+            //        if (isBasketActive)
+            //        {
+            //            //Add to basket
+            //            this.TextBasket?.Items.Add(text);
+            //            this.TextBasket.IsGathering = false;
+            //        }
+            //        else
+            //        {
+            //            //Fire event
+            //            this.TextCopied.Invoke(this, text);
+            //        }
+            //    }
+            //    else if (iData.GetDataPresent(DataFormats.Bitmap))
+            //    {
+            //        Bitmap image = (Bitmap)iData.GetData(DataFormats.Bitmap);
+            //        //Fire event
+            //        this.ImageCopied.Invoke(this, image);
+            //    }
+            //    else if (iData.GetDataPresent(DataFormats.FileDrop))
+            //    {
+            //        var files = (string[])iData.GetData(DataFormats.FileDrop);
 
-                    //check baskets
-                    var isBasketActive = (this.FileBasket != null && this.FileBasket.IsGathering);
+            //        //check baskets
+            //        var isBasketActive = (this.FileBasket != null && this.FileBasket.IsGathering);
 
-                    if (isBasketActive)
-                    {
-                        //Add to basket
-                        this.FileBasket?.Items.Add(files);
-                        this.FileBasket.IsGathering = false;
-                    }
-                    else
-                    {
-                        //Fire event
-                        this.FilesCopied.Invoke(this, files);
-                    }
-                }
-            }
+            //        if (isBasketActive)
+            //        {
+            //            //Add to basket
+            //            this.FileBasket?.Items.Add(files);
+            //            this.FileBasket.IsGathering = false;
+            //        }
+            //        else
+            //        {
+            //            //Fire event
+            //            this.FilesCopied.Invoke(this, files);
+            //        }
+            //    }
+            //}
         }
         private void CatcherForm_Load(object sender, EventArgs e)
         {
@@ -125,8 +125,13 @@ namespace ClipboardCatcher
 
         private void Init()
         {
-            this.FileBasket = new Basket<string[]>(Keys.E, HotKey.KeyModifiers.Control, Keys.E, HotKey.KeyModifiers.Alt, Keys.E, HotKey.KeyModifiers.Shift);
-            this.TextBasket = new Basket<string>(Keys.NumPad0, HotKey.KeyModifiers.Control, Keys.Q, HotKey.KeyModifiers.Alt, Keys.Q, HotKey.KeyModifiers.Shift);
+            this.FileBasket = new Basket<string[]>(Keys.D1, HotKey.KeyModifiers.Control,
+                                                   Keys.D2, HotKey.KeyModifiers.Control,
+                                                   Keys.D3, HotKey.KeyModifiers.Control);
+
+            this.TextBasket = new Basket<string>(Keys.Q, HotKey.KeyModifiers.Alt,
+                                                 Keys.W, HotKey.KeyModifiers.Alt,
+                                                 Keys.E, HotKey.KeyModifiers.Alt);
 
             this.FileBasket.FillHotKeyPressed += FileBasket_FillHotKeyPressed;
             this.FileBasket.EmptyHotKeyPressed += FileBasket_EmptyHotKeyPressed;
@@ -134,13 +139,13 @@ namespace ClipboardCatcher
             this.TextBasket.FillHotKeyPressed += TextBasket_FillHotKeyPressed;
             this.TextBasket.EmptyHotKeyPressed += TextBasket_EmptyHotKeyPressed;
 
-            //this.FileBasket.UpdateEvents();
-            //this.TextBasket.UpdateEvents();
+            this.FileBasket.RegisterEvents();
+            this.TextBasket.RegisterEvents();
         }
 
         private void TextBasket_EmptyHotKeyPressed(object sender, EventArgs e)
         {
-            if (this.TextBasket == null || this.TextBasket.Items == null) return;
+            if (this.TextBasket == null || this.TextBasket.Items == null || this.TextBasket.Items.Count == 0) return;
 
             var contents = this.TextBasket.Items.Aggregate((x, y) => x + y);
 
@@ -157,7 +162,7 @@ namespace ClipboardCatcher
 
         private void FileBasket_EmptyHotKeyPressed(object sender, EventArgs e)
         {
-            if (this.TextBasket == null || this.TextBasket.Items == null) return;
+            if (this.FileBasket == null || this.FileBasket.Items == null || this.FileBasket.Items.Count == 0) return;
 
             var contents = this.FileBasket.Items.Aggregate((x, y) =>
             {
@@ -186,7 +191,7 @@ namespace ClipboardCatcher
         private void FileBasket_FillHotKeyPressed(object sender, EventArgs e)
         {
             this.FileBasket.IsGathering = true;
-            SendKeys.Send("^C");
+            //SendKeys.Send("^C");
         }
 
         #endregion

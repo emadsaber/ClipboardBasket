@@ -9,9 +9,9 @@ namespace ClipboardCatcher
     {
         #region events
 
-        public event EventHandler FillHotKeyPressed = new EventHandler((x, y) => { return; });
-        public event EventHandler EmptyHotKeyPressed = new EventHandler((x, y) => { return; });
-        public event EventHandler DeleteHotKeyPressed = new EventHandler((x, y) => { return; });
+        public event EventHandler FillHotKeyPressed;
+        public event EventHandler EmptyHotKeyPressed;
+        public event EventHandler DeleteHotKeyPressed;
 
         #endregion
 
@@ -51,18 +51,10 @@ namespace ClipboardCatcher
 
         #region cst
 
-        public Basket(  Keys fillKey, HotKey.KeyModifiers fillModifier, 
+        public Basket(Keys fillKey, HotKey.KeyModifiers fillModifier,
                         Keys emptyKey, HotKey.KeyModifiers emptyModifier,
                         Keys deleteKey, HotKey.KeyModifiers deleteModifier)
         {
-            this.EmptyHotKeyPressed += Basket_EmptyHotKeyPressed;
-            this.FillHotKeyPressed += Basket_FillHotKeyPressed;
-            this.DeleteHotKeyPressed += Basket_DeleteHotKeyPressed;
-
-            this.EmptyBasketHotKey = new HotKey(emptyKey, emptyModifier, EmptyHotKeyPressed);
-            this.FillBasketHotKey = new HotKey(fillKey, fillModifier, FillHotKeyPressed);
-            this.DeleteBasketHotKey = new HotKey(deleteKey, deleteModifier, DeleteHotKeyPressed);
-
             this.Items = new List<T>();
 
             this.FillKey = fillKey;
@@ -71,6 +63,10 @@ namespace ClipboardCatcher
             this.FillModifiers = fillModifier;
             this.EmptyModifiers = emptyModifier;
             this.DeleteModifiers = deleteModifier;
+
+            this.FillHotKeyPressed = new EventHandler(Basket_FillHotKeyPressed);
+            this.EmptyHotKeyPressed = new EventHandler(Basket_EmptyHotKeyPressed);
+            this.DeleteHotKeyPressed = new EventHandler(Basket_DeleteHotKeyPressed);
         }
 
         #endregion
@@ -84,6 +80,13 @@ namespace ClipboardCatcher
 
             this.EmptyBasketHotKey = new HotKey(EmptyKey, EmptyModifiers, EmptyHotKeyPressed);
             this.FillBasketHotKey = new HotKey(FillKey, FillModifiers, FillHotKeyPressed);
+            this.DeleteBasketHotKey = new HotKey(DeleteKey, DeleteModifiers, DeleteHotKeyPressed);
+        }
+
+        public void RegisterEvents()
+        {
+            this.FillBasketHotKey = new HotKey(FillKey, FillModifiers, FillHotKeyPressed);
+            this.EmptyBasketHotKey = new HotKey(EmptyKey, EmptyModifiers, EmptyHotKeyPressed);
             this.DeleteBasketHotKey = new HotKey(DeleteKey, DeleteModifiers, DeleteHotKeyPressed);
         }
         private void Basket_FillHotKeyPressed(object sender, EventArgs e)
@@ -100,7 +103,7 @@ namespace ClipboardCatcher
         {
             this.Items?.Clear();
         }
-        
+
         #endregion
     }
 }

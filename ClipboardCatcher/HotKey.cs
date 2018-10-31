@@ -28,7 +28,7 @@ namespace ClipboardCatcher
         }
 
         private const int WM_HOTKEY = 0x0312;
-        private const int id = 100;
+        private int id = 100;
 
 
         private IntPtr handle;
@@ -40,18 +40,17 @@ namespace ClipboardCatcher
 
         private event EventHandler HotKeyPressed;
 
-        public Keys Key { get; set; }
-        public KeyModifiers Modifier { get; set; }
-
         public HotKey(Keys key, KeyModifiers modifier, EventHandler hotKeyPressed)
         {
             HotKeyPressed = hotKeyPressed;
+            this.id = new Random().Next(1, 100000);
+            RegisterHotKey(key, modifier);
+            Application.AddMessageFilter(this);
         }
 
         public void Register()
         {
-            RegisterHotKey(Key, Modifier);
-            Application.AddMessageFilter(this);
+
         }
 
         ~HotKey()

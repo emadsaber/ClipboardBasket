@@ -50,19 +50,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EJq88jg71BqayLm60agYQ8bDF5JzBTGqXZUIyy6qWio=</dsig:DigestValue>
+        <dsig:DigestValue>eLra49RpwvklJrDwCwwE47hyUA5yhpD23GC2ml+DQbQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClipboardCatcher.dll" size="15872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClipboardCatcher.dll" size="14848">
       <assemblyIdentity name="ClipboardCatcher" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZssdXqTPadb6LiFuvszddDaMR21cqU6mJd64VNJivS4=</dsig:DigestValue>
+        <dsig:DigestValue>cVaDbJgNnEYEVftmq9uY2k3z5Ua7vuDOtpuTr9h7Gag=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
