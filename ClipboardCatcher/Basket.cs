@@ -9,9 +9,9 @@ namespace ClipboardCatcher
     {
         #region events
 
-        public event EventHandler FillHotKeyPressed;
-        public event EventHandler EmptyHotKeyPressed;
-        public event EventHandler DeleteHotKeyPressed;
+        public event EventHandler FillBasketEvent;
+        public event EventHandler EmptyBasketEvent;
+        public event EventHandler DropBasketEvent;
 
         #endregion
 
@@ -24,86 +24,52 @@ namespace ClipboardCatcher
         /// Represents all items separated from each other one item per Fill operation
         /// </summary>
         public List<T> Items { get; set; }
-        /// <summary>
-        /// HotKey to empty the basket into one place
-        /// </summary>
-        public HotKey EmptyBasketHotKey { get; set; }
-        /// <summary>
-        /// HotKey to add a new item to basket
-        /// </summary>
-        public HotKey FillBasketHotKey { get; set; }
-        /// <summary>
-        /// HotKey to clear all basket items
-        /// </summary>
-        public HotKey DeleteBasketHotKey { get; set; }
-        /// <summary>
-        /// Indicates that the basket now is capturing something
-        /// </summary>
+        public T WholeBasket { get; set; }
         public bool IsGathering { get; set; }
-
-        public Keys FillKey { get; private set; }
-        public Keys EmptyKey { get; private set; }
-        public Keys DeleteKey { get; private set; }
-        public HotKey.KeyModifiers FillModifiers { get; set; }
-        public HotKey.KeyModifiers EmptyModifiers { get; set; }
-        public HotKey.KeyModifiers DeleteModifiers { get; set; }
         #endregion
 
         #region cst
 
-        public Basket(Keys fillKey, HotKey.KeyModifiers fillModifier,
-                        Keys emptyKey, HotKey.KeyModifiers emptyModifier,
-                        Keys deleteKey, HotKey.KeyModifiers deleteModifier)
+        public Basket()
         {
             this.Items = new List<T>();
 
-            this.FillKey = fillKey;
-            this.EmptyKey = emptyKey;
-            this.DeleteKey = deleteKey;
-            this.FillModifiers = fillModifier;
-            this.EmptyModifiers = emptyModifier;
-            this.DeleteModifiers = deleteModifier;
-
-            this.FillHotKeyPressed = new EventHandler(Basket_FillHotKeyPressed);
-            this.EmptyHotKeyPressed = new EventHandler(Basket_EmptyHotKeyPressed);
-            this.DeleteHotKeyPressed = new EventHandler(Basket_DeleteHotKeyPressed);
+            this.FillBasketEvent = new EventHandler(FillEventHandler);
+            this.EmptyBasketEvent = new EventHandler(EmptyEventHandler);
+            this.DropBasketEvent = new EventHandler(DropEventHandler);
         }
 
         #endregion
 
-        #region helpers
-        public void UpdateEvents()
-        {
-            this.EmptyBasketHotKey?.UnregisterHotKey();
-            this.FillBasketHotKey?.UnregisterHotKey();
-            this.DeleteBasketHotKey?.UnregisterHotKey();
+        #region handlers
 
-            this.EmptyBasketHotKey = new HotKey(EmptyKey, EmptyModifiers, EmptyHotKeyPressed);
-            this.FillBasketHotKey = new HotKey(FillKey, FillModifiers, FillHotKeyPressed);
-            this.DeleteBasketHotKey = new HotKey(DeleteKey, DeleteModifiers, DeleteHotKeyPressed);
+        private void FillEventHandler(object sender, EventArgs e)
+        {
         }
-
-        public void RegisterEvents()
-        {
-            this.FillBasketHotKey = new HotKey(FillKey, FillModifiers, FillHotKeyPressed);
-            this.EmptyBasketHotKey = new HotKey(EmptyKey, EmptyModifiers, EmptyHotKeyPressed);
-            this.DeleteBasketHotKey = new HotKey(DeleteKey, DeleteModifiers, DeleteHotKeyPressed);
-        }
-        private void Basket_FillHotKeyPressed(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Basket_EmptyHotKeyPressed(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Basket_DeleteHotKeyPressed(object sender, EventArgs e)
-        {
+        private void EmptyEventHandler(object sender, EventArgs e){}
+        private void DropEventHandler(object sender, EventArgs e) {
             this.Items?.Clear();
         }
+        #endregion
 
+        #region methods
+
+        public void Push(object sender, T item)
+        {
+            this.Items = this.Items ?? new List<T>();
+            this.Items.Add(item);
+            this.FillBasketEvent.Invoke(sender, new EventArgs());
+        }
+
+        public void Delete()
+        {
+            this.DropBasketEvent.Invoke(this, null);
+        }
+
+        public void CopyBasket()
+        {
+            this.EmptyBasketEvent(this, null);
+        }
         #endregion
     }
 }

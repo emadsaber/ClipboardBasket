@@ -59,6 +59,9 @@
             this.lblPageCount = new System.Windows.Forms.Label();
             this.btnShowDatabase = new System.Windows.Forms.Button();
             this.chkStartWithWindows = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCopyBasket = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.ctxMnu.SuspendLayout();
@@ -345,11 +348,44 @@
             this.chkStartWithWindows.UseVisualStyleBackColor = true;
             this.chkStartWithWindows.CheckedChanged += new System.EventHandler(this.chkStartWithWindows_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(277, 432);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Open Basket";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCopyBasket
+            // 
+            this.btnCopyBasket.Location = new System.Drawing.Point(378, 432);
+            this.btnCopyBasket.Name = "btnCopyBasket";
+            this.btnCopyBasket.Size = new System.Drawing.Size(95, 23);
+            this.btnCopyBasket.TabIndex = 13;
+            this.btnCopyBasket.Text = "Copy Basket";
+            this.btnCopyBasket.UseVisualStyleBackColor = true;
+            this.btnCopyBasket.Click += new System.EventHandler(this.btnCopyBasket_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(479, 432);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Delete Basket";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 467);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnCopyBasket);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnShowDatabase);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPageCount);
@@ -414,6 +450,9 @@
         private System.Windows.Forms.Label lblPageCount;
         private System.Windows.Forms.Button btnShowDatabase;
         private System.Windows.Forms.CheckBox chkStartWithWindows;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCopyBasket;
+        private System.Windows.Forms.Button button3;
     }
 }
 
