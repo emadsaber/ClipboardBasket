@@ -142,16 +142,20 @@ namespace ClipboardCatcher
             this.TextBasket.IsGathering = false;
         }
 
-        public void CopyBasket()
+        public void CopyTextBasket()
         {
-            //this.FileBasket.CopyBasket();
             this.TextBasket.CopyBasket();
+        }
+
+        public void CopyFilesBasket()
+        {
+            this.FileBasket.CopyBasket();
         }
 
         public void DeleteBasket()
         {
-            this.FileBasket.CopyBasket();
-            this.TextBasket.CopyBasket();
+            this.FileBasket.Delete();
+            this.TextBasket.Delete();
         }
 
         #endregion

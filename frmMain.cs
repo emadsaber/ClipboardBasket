@@ -429,7 +429,12 @@ namespace ClipboardBasket
 
         private void btnCopyBasket_Click(object sender, EventArgs e)
         {
-            this.CopyBasket();
+            this.CopyTextBasket();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.CopyFilesBasket();
         }
     }
 }
