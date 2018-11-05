@@ -157,7 +157,7 @@ namespace ClipboardCatcher
             this.FileBasket.Delete();
             this.TextBasket.Delete();
         }
-
+        //Basket
         #endregion
 
         #region Helpers
