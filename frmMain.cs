@@ -416,25 +416,5 @@ namespace ClipboardBasket
         }
 
         #endregion
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.OpenBasket();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.DeleteBasket();
-        }
-
-        private void btnCopyBasket_Click(object sender, EventArgs e)
-        {
-            this.CopyTextBasket();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.CopyFilesBasket();
-        }
     }
 }

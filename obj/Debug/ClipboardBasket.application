@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ClipboardBasket.exe.manifest" size="7601">
+    <dependentAssembly dependencyType="install" codebase="ClipboardBasket.exe.manifest" size="7600">
       <assemblyIdentity name="ClipboardBasket.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>igC5tXTS5o0QS4/I1S7jXIxv4O33zm4DWwqh4xhwP60=</dsig:DigestValue>
+        <dsig:DigestValue>m73zy7Q+fTLfnp5riHBl4ynjNrBPKuOrNMxCIGbKnmQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
